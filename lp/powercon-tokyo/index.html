@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="デンカエルのパワコン交換。東京都内の戸建て専門、シャープ特約店。工事費込みの総額表示、写真3枚で当日見積もり、東京都の補助金（最大10万円/台）の申請代行。">
+<meta name="description" content="デンカエルのパワコン交換。東京都内の戸建て専門、全メーカー対応。工事費込みの総額表示、写真3枚で当日見積もり、東京都の補助金（最大10万円/台）の申請代行。">
 <link rel="icon" href="../../brand/denkaeru/icon.svg" type="image/svg+xml">
 <title>デンカエルのパワコン交換</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,16 +177,8 @@ dl.dl{display:grid;grid-template-columns:7.5em 1fr;margin:0;border-top:1px solid
 dl.dl dt,dl.dl dd{margin:0;padding:12px 4px;border-bottom:1px solid var(--line)}
 dl.dl dt{font-weight:700;color:var(--navy)}
 
-.sharp-head{display:grid;grid-template-columns:1fr 220px;gap:28px;align-items:center;margin-bottom:28px}
-.sharp-head h2{margin:6px 0 10px}
-.sharp-head p{color:var(--muted)}
-.sharp-head .slot{height:84px;font-size:13px}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.product{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.product .slot{aspect-ratio:16/10;border:0;border-bottom:1.5px dashed var(--muted);border-radius:0;font-size:13px;padding:12px}
-.product .pt{padding:14px 16px 18px;display:grid;gap:2px}
-.product b{font-family:var(--display);font-size:18px;color:var(--navy)}
-.product .pt span{font-size:14px;color:var(--muted)}
+.makers{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px}
+.makers li{background:var(--pale);border:1px solid var(--line);border-radius:999px;padding:6px 18px;font-weight:700;font-size:15px}
 
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .steps li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:6px;align-content:start}
@@ -254,10 +246,9 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .trust .t{border-bottom:1px solid var(--line)}
   .trust .t:nth-child(2n){border-right:0}
   .trust .t:last-child{grid-column:1/-1;border-bottom:0}
-  .photos,.plans,.products{grid-template-columns:1fr}
-  .sim,.subsidy,.final .top,.sharp-head{grid-template-columns:1fr}
+  .photos,.plans{grid-template-columns:1fr}
+  .sim,.subsidy,.final .top{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
-  .dealer .slot{display:none}
   .sticky{display:grid}
 }
 @media (max-width:600px){
@@ -309,7 +300,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <svg aria-hidden="true"><use href="#frog"/></svg>
       <span class="txt"><span class="tag">パワコン交換専門店</span><span class="name"><span class="d">デン</span><span class="k">カエル</span></span></span>
     </a>
-    <div class="dealer"><span class="badge">シャープ特約店</span><span class="slot" role="img" aria-label="サンビスタのロゴ（差し替え予定）">サンビスタ<br>ロゴ</span></div>
+    <div class="dealer"><span class="badge">全メーカー対応</span></div>
     <nav class="gnav" aria-label="メニュー"><a href="#price">費用</a><a href="#reasons">選ばれる理由</a><a href="#flow">交換の流れ</a><a href="#faq">よくある質問</a></nav>
     <div class="hd-cta">
       <a class="hd-tel" href="tel:0120000000"><span class="num">0120-000-000</span><small>受付 9:00〜20:00 年中無休</small></a>
@@ -323,7 +314,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="hero">
   <div class="in">
     <div class="txt">
-      <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">シャープ特約店</span></div>
+      <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">全メーカー対応</span></div>
       <h1>止まったパワコン、<br><em>最短翌日</em>に<br>カエます。</h1>
       <p class="sub">写真3枚を送るだけ。補助金を引いた「総額」を、その日のうちにお知らせします。</p>
       <div class="marks">
@@ -359,7 +350,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="t"><span class="k">現地確認</span><span class="v">最短 翌日</span></div>
     <div class="t"><span class="k">交換工事</span><span class="v">約半日</span></div>
     <div class="t"><span class="k">施工実績</span><span class="v ph">[実績件数]件</span></div>
-    <div class="t"><span class="k">メーカー</span><span class="v">シャープ特約店</span></div>
+    <div class="t"><span class="k">対応メーカー</span><span class="v">全メーカー</span></div>
   </div>
 </div>
 
@@ -445,17 +436,12 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section class="band white" id="sharp">
+<section class="band white" id="makers">
   <div class="in">
-    <div class="sharp-head">
-      <div><span class="kicker">シャープ特約店</span><h2>ご希望の方には、シャープ製品もご案内できます</h2><p>パワコン交換と合わせて検討したい方へ。蓄電池・EV用機器・太陽光パネルまで、シャープの特約店としてご提案します。ご希望がなければ、こちらからおすすめすることはありません。</p></div>
-      <span class="slot" role="img" aria-label="サンビスタのロゴ（差し替え予定）">サンビスタ ロゴ</span>
-    </div>
-    <div class="products">
-      <div class="product"><span class="slot" role="img" aria-label="シャープ公式写真：蓄電池システム設置例（差し替え予定）">シャープ公式写真<br>蓄電池システム設置例</span><div class="pt"><b>蓄電池システム</b><span>昼の電気をためて、夜や停電時に使えます。</span></div></div>
-      <div class="product"><span class="slot" role="img" aria-label="シャープ公式写真：EVコン設置例（差し替え予定）">シャープ公式写真<br>EVコン設置例</span><div class="pt"><b>EVコン</b><span>太陽光の電気を電気自動車に。[製品の説明文]</span></div></div>
-      <div class="product"><span class="slot" role="img" aria-label="シャープ公式写真：BLACKSOLAR ZERO設置例（差し替え予定）">シャープ公式写真<br>BLACKSOLAR ZERO設置例</span><div class="pt"><b>BLACKSOLAR ZERO</b><span>屋根になじむ黒い太陽光パネル。[製品の説明文]</span></div></div>
-    </div>
+    <div class="head"><span class="kicker">対応メーカー</span><h2>どのメーカーのパワコンも交換できます</h2><p class="lead">今のメーカーが撤退していたり、後継機がなかったりする場合は、パネルとの相性と出力を確認して他社製への交換をご提案します。</p></div>
+    <ul class="makers">
+      <li>シャープ</li><li>パナソニック</li><li>京セラ</li><li>長州産業</li><li>三菱電機</li><li>オムロン</li><li>田淵電機（ダイヤゼブラ電機）</li><li>東芝</li><li>カナディアン・ソーラー</li><li>Qセルズ</li><li>ソーラーフロンティア</li><li>その他のメーカー</li>
+    </ul>
   </div>
 </section>
 
