@@ -9,6 +9,7 @@
 - <会社HP>/src/lp/denkaeru/img/     … 写真・ロゴ（テーマに同梱）
 
 使い方: python3 build_wp.py --form-id <CF7のID>
+関東版（/denkaeru/kanto/）の本文だけ: python3 build_kanto.py && python3 build_wp.py --form-id <CF7のID> --page kanto
 サーバーのWAFが本文の <script / <style / /* を拒否するため、本文には入れない。
 CSS/JS/画像を変えたら会社HPテーマのリリース（DEPLOYMENT.md）が必要。本文だけなら固定ページの更新でよい。
 """
@@ -29,9 +30,11 @@ FONTS = ('@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+
 
 ap = argparse.ArgumentParser()
 ap.add_argument('--form-id', required=True, help='Contact Form 7 のフォームID')
+ap.add_argument('--page', choices=['tokyo', 'kanto'], default='tokyo',
+                help='kanto: kanto.html から /denkaeru/kanto/ の本文だけを書き出す（CSS/JS/画像は東京版と共通）')
 args = ap.parse_args()
 
-html = (HERE / 'index.html').read_text(encoding='utf-8')
+html = (HERE / ('kanto.html' if args.page == 'kanto' else 'index.html')).read_text(encoding='utf-8')
 css = re.search(r'<style>(.*?)</style>', html, re.S).group(1).strip()
 js = re.search(r'<script>(.*?)</script>', html, re.S).group(1).strip()
 body = re.search(r'<body>(.*?)<script>', html, re.S).group(1).strip()
@@ -50,6 +53,11 @@ if re.search(r'<script|<style|/\*', body, re.I):
     raise SystemExit('本文に <script / <style / /* が含まれています（WAFで保存できません）')
 
 OUT.mkdir(exist_ok=True)
+if args.page == 'kanto':
+    out = OUT / f'{SLUG}-kanto-content.html'
+    out.write_text('<!-- wp:html -->\n' + body + '\n<!-- /wp:html -->\n', encoding='utf-8')
+    print(f'本文: {out} ({out.stat().st_size:,} bytes)')
+    raise SystemExit(0)
 (OUT / f'{SLUG}-content.html').write_text('<!-- wp:html -->\n' + body + '\n<!-- /wp:html -->\n', encoding='utf-8')
 
 # 特商法：本文の <dl> だけを子ページへ
