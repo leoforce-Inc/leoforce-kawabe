@@ -206,6 +206,8 @@ dl.dl dt{font-weight:700;color:var(--navy)}
 .final .ctas{display:grid;gap:12px}
 .final .telbox{text-align:center;border:1px solid rgba(255,255,255,.25);border-radius:var(--r);padding:12px;text-decoration:none;color:#fff;display:block}
 .final .telbox .num{display:block;font-size:30px;color:var(--sun)}
+.mailbox{font-size:14px;opacity:.9;text-align:center;margin:0}
+.mailbox .addr{font-family:var(--mono);user-select:all}
 .form{margin:40px auto 0;background:#fff;color:var(--fg);border-radius:16px;padding:26px;display:grid;gap:14px;max-width:860px}
 .form h3{color:var(--navy)}
 .form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -291,7 +293,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </svg>
 
 <!-- 公開前に削除：プロトタイプ表示 -->
-<div class="proto"><div class="in"><b>プロトタイプ</b>　価格・連絡先・実績はダミー、人物と施工の写真はイメージです。</div></div>
+<div class="proto"><div class="in"><b>プロトタイプ</b>　価格・実績はダミー、人物と施工の写真はイメージです。</div></div>
 <div class="ribbon"><div class="in">令和8年度 東京都のパワコン交換補助金 受付中｜最大10万円／台（予算に達し次第終了）　<a href="#subsidy">詳しく</a></div></div>
 
 <header class="site">
@@ -303,10 +305,10 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="dealer"><span class="badge">全メーカー対応</span></div>
     <nav class="gnav" aria-label="メニュー"><a href="#price">費用</a><a href="#reasons">選ばれる理由</a><a href="#flow">交換の流れ</a><a href="#faq">よくある質問</a></nav>
     <div class="hd-cta">
-      <a class="hd-tel" href="tel:0120000000"><span class="num">0120-000-000</span><small>受付 9:00〜20:00 年中無休</small></a>
+      <a class="hd-tel" href="tel:0120879461"><span class="num">0120-879-461</span><small>受付 9:00〜20:00 年中無休</small></a>
       <a class="hd-btn" href="#line">無料見積もり</a>
     </div>
-    <a class="hd-phone" href="tel:0120000000" aria-label="電話する"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
+    <a class="hd-phone" href="tel:0120879461" aria-label="電話する"><svg aria-hidden="true"><use href="#i-tel"/></svg></a>
   </div>
 </header>
 
@@ -325,7 +327,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="ctas">
         <a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg><span>写真を撮って<br>かんたん見積もり</span></a>
-        <a class="btn btn-tel" href="tel:0120000000"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>電話で相談<small class="num">0120-000-000</small></span></a>
+        <a class="btn btn-tel" href="tel:0120879461"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>電話で相談<small class="num">0120-879-461</small></span></a>
       </div>
       <p class="note">見積書はご訪問の後日にお届けします。その場で契約をお願いすることはありません。</p>
     </div>
@@ -481,7 +483,8 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>止まっている日数だけ、発電した電気が無駄になっています。</p>
         <div class="ctas">
           <a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg>写真を撮ってかんたん見積もり</a>
-          <a class="telbox" href="tel:0120000000">お電話でのご相談<span class="num">0120-000-000</span><small>受付 9:00〜20:00（年中無休）</small></a>
+          <a class="telbox" href="tel:0120879461">お電話でのご相談<span class="num">0120-879-461</span><small>受付 9:00〜20:00（年中無休）</small></a>
+          <p class="mailbox">メールでのご相談：<span class="addr">info@leoforce.co.jp</span></p>
         </div>
       </div>
     </div>
@@ -506,7 +509,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
       </fieldset>
       <label for="f-note">ご相談内容（任意）<textarea id="f-note" name="note" placeholder="例：昨日からモニターにエラーが出て、発電が止まっています"></textarea></label>
-      <p class="agree">送信すると、個人情報の取り扱いに同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
+      <p class="agree">ご相談内容は info@leoforce.co.jp に届きます。送信すると、個人情報の取り扱いに同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
       <button class="btn btn-tel" type="submit">この内容で相談する（無料）</button>
       <p class="thanks" id="thanks" hidden></p>
     </form>
@@ -516,14 +519,14 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer>
   <div class="in">
-    <span>運営：株式会社レオフォース｜[所在地]｜[電気工事業の登録番号]｜[特定商取引法に基づく表記]｜[プライバシーポリシー]<br>※掲載している人物・施工の写真はイメージです。</span>
+    <span>運営：株式会社レオフォース｜お問い合わせ：0120-879-461／info@leoforce.co.jp｜[所在地]｜[電気工事業の登録番号]｜[特定商取引法に基づく表記]｜[プライバシーポリシー]<br>※掲載している人物・施工の写真はイメージです。</span>
     <span>© デンカエル</span>
   </div>
 </footer>
 
 <nav class="sticky" aria-label="お問い合わせ">
   <a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg>LINEで写真見積もり</a>
-  <a class="btn btn-tel" href="tel:0120000000"><svg aria-hidden="true"><use href="#i-tel"/></svg>電話する</a>
+  <a class="btn btn-tel" href="tel:0120879461"><svg aria-hidden="true"><use href="#i-tel"/></svg>電話する</a>
 </nav>
 
 <script>
@@ -539,6 +542,10 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   }
   price.addEventListener('input',sim);units.addEventListener('change',sim);sim();
 
+  // フォーム送信：FORM_ENDPOINT（フォーム送信サービスのURL）を設定するとそこへ送信。
+  // 未設定のときは、info@leoforce.co.jp 宛のメールを作成してメールソフトを開く。
+  var FORM_ENDPOINT='';
+  var MAIL_TO='info@leoforce.co.jp';
   var form=document.getElementById('form'),thanks=document.getElementById('thanks');
   form.addEventListener('submit',function(e){
     e.preventDefault();
@@ -546,7 +553,19 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     [].forEach.call(form.querySelectorAll('[required]'),function(el){var ng=!el.value.trim();el.style.borderColor=ng?'var(--red)':'';if(ng&&!bad)bad=el;});
     thanks.hidden=false;
     if(bad){bad.focus();thanks.textContent='お名前・電話番号・郵便番号を入力してください。';return;}
-    thanks.textContent='送信内容を確認しました（プロトタイプのため、実際には送信されません）。';
+    var v=function(id){return document.getElementById(id).value.trim();};
+    var states=[].map.call(form.querySelectorAll('input[name=s]:checked'),function(c){return c.parentNode.textContent.trim();}).join('、')||'未選択';
+    var data={name:v('f-name'),tel:v('f-tel'),zip:v('f-zip'),maker:v('f-maker'),state:states,note:v('f-note')};
+    var body='お名前：'+data.name+'\n電話番号：'+data.tel+'\n郵便番号：'+data.zip+'\nパワコンのメーカー：'+data.maker+'\nいまの状態：'+data.state+'\nご相談内容：\n'+data.note;
+    if(FORM_ENDPOINT){
+      thanks.textContent='送信しています…';
+      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({_subject:'【デンカエル】パワコン交換のご相談',_replyto:MAIL_TO},data))})
+        .then(function(r){if(!r.ok)throw 0;thanks.textContent='送信しました。担当者より折り返しご連絡します。';form.reset();})
+        .catch(function(){thanks.textContent='送信できませんでした。お手数ですが 0120-879-461 までお電話ください。';});
+      return;
+    }
+    location.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent('【デンカエル】パワコン交換のご相談')+'&body='+encodeURIComponent(body);
+    thanks.textContent='メールソフトで送信画面を開きました。開かない場合は、info@leoforce.co.jp へ直接メールするか、0120-879-461 までお電話ください。';
   });
 })();
 </script>
