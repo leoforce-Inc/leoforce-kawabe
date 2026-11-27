@@ -177,6 +177,12 @@ dl.dl{display:grid;grid-template-columns:7.5em 1fr;margin:0;border-top:1px solid
 dl.dl dt,dl.dl dd{margin:0;padding:12px 4px;border-bottom:1px solid var(--line)}
 dl.dl dt{font-weight:700;color:var(--navy)}
 
+.brands{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:880px}
+.brands li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 14px 14px;display:grid;grid-template-rows:48px auto;justify-items:center;align-items:center;gap:8px;text-align:center}
+.brands img{height:var(--h,30px);width:auto;max-width:100%;object-fit:contain}
+.brands span{font-weight:700;font-size:14px;color:var(--navy);line-height:1.4}
+.brands small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
+.brands-more{text-align:center;font-weight:700;color:var(--navy);margin:28px 0 12px}
 .makers{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px}
 .makers li{background:var(--pale);border:1px solid var(--line);border-radius:999px;padding:6px 18px;font-weight:700;font-size:15px}
 
@@ -270,6 +276,10 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .reason div{padding:12px 14px}
   .reason b{font-size:17px}
   .steps{grid-template-columns:1fr}
+  .brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .brands li{padding:16px 10px 12px;grid-template-rows:40px auto}
+  .brands li:last-child:nth-child(odd){grid-column:1/-1}
+  .brands img{height:calc(var(--h,30px) * .8)}
   .form .two{grid-template-columns:1fr}
   .guide svg{width:64px;height:51px}
 }
@@ -421,7 +431,28 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section class="band" id="subsidy">
+<section class="band" id="makers">
+  <div class="in">
+    <div class="head"><span class="kicker">取扱メーカー・商品ラインナップ</span><h2>どのメーカーのパワコンも交換できます</h2><p class="lead">今のメーカーが撤退していたり、後継機がなかったりする場合は、パネルとの相性と出力を確認して他社製への交換をご提案します。</p></div>
+    <ul class="brands">
+      <li><img src="img/logos/sharp.svg" alt="SHARP" width="182" height="29" style="--h:29px" loading="lazy"><span>シャープ</span></li>
+      <li><img src="img/logos/kyocera.svg" alt="京セラ" width="152" height="35" style="--h:35px" loading="lazy"><span>京セラ</span></li>
+      <li><img src="img/logos/choshu.svg" alt="長州産業" width="220" height="25" style="--h:25px" loading="lazy"><span>長州産業</span></li>
+      <li><img src="img/logos/qcells.svg" alt="Qセルズ" width="135" height="39" style="--h:39px" loading="lazy"><span>Qセルズ</span></li>
+      <li><img src="img/logos/canadian.png" alt="カナディアンソーラー" width="191" height="29" style="--h:29px" loading="lazy"><span>カナディアンソーラー</span></li>
+      <li><img src="img/logos/nichicon.svg" alt="ニチコン" width="166" height="32" style="--h:32px" loading="lazy"><span>ニチコン<small>蓄電池・ハイブリッド</small></span></li>
+      <li><img src="img/logos/tesla.svg" alt="テスラ" width="211" height="25" style="--h:25px" loading="lazy"><span>テスラ<small>蓄電池</small></span></li>
+      <li><img src="img/logos/xsol.png" alt="XSOL" width="91" height="46" style="--h:46px" loading="lazy"><span>XSOL</span></li>
+      <li><img src="img/logos/dmm.svg" alt="DMM energy" width="184" height="30" style="--h:30px" loading="lazy"><span>DMM energy</span></li>
+    </ul>
+    <p class="brands-more">このほかのメーカーも交換できます</p>
+    <ul class="makers">
+      <li>パナソニック</li><li>オムロン</li><li>田淵電機（ダイヤゼブラ電機）</li><li>三菱電機</li><li>東芝</li><li>ソーラーフロンティア</li><li>その他のメーカー</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band white" id="subsidy">
   <div class="in">
     <div class="head"><span class="kicker">東京都の補助金</span><h2>面倒な申請は、すべてデンカエルが代行します</h2></div>
     <div class="subsidy">
@@ -438,14 +469,6 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section class="band white" id="makers">
-  <div class="in">
-    <div class="head"><span class="kicker">対応メーカー</span><h2>どのメーカーのパワコンも交換できます</h2><p class="lead">今のメーカーが撤退していたり、後継機がなかったりする場合は、パネルとの相性と出力を確認して他社製への交換をご提案します。</p></div>
-    <ul class="makers">
-      <li>シャープ</li><li>パナソニック</li><li>京セラ</li><li>長州産業</li><li>三菱電機</li><li>オムロン</li><li>田淵電機（ダイヤゼブラ電機）</li><li>東芝</li><li>カナディアン・ソーラー</li><li>Qセルズ</li><li>ソーラーフロンティア</li><li>その他のメーカー</li>
-    </ul>
-  </div>
-</section>
 
 <section class="band" id="flow">
   <div class="in">
@@ -496,7 +519,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="two">
         <label for="f-zip">郵便番号<span class="req">必須</span><input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="例 1770041" required></label>
-        <label for="f-maker">パワコンのメーカー<select id="f-maker" name="maker"><option>分からない</option><option>シャープ</option><option>パナソニック</option><option>京セラ</option><option>長州産業</option><option>三菱電機</option><option>オムロン</option><option>田淵電機</option><option>その他</option></select></label>
+        <label for="f-maker">パワコンのメーカー<select id="f-maker" name="maker"><option>分からない</option><option>シャープ</option><option>パナソニック</option><option>京セラ</option><option>長州産業</option><option>オムロン</option><option>田淵電機</option><option>三菱電機</option><option>東芝</option><option>Qセルズ</option><option>カナディアンソーラー</option><option>その他</option></select></label>
       </div>
       <fieldset>
         <legend>いまの状態（いくつでも）</legend>
