@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="デンカエルのパワコン交換。東京都内の戸建て専門、全メーカー対応。工事費込みの総額表示、写真3枚で当日見積もり、東京都の補助金（最大10万円/台）の申請代行。">
+<meta name="description" content="デンカエルのパワコン交換。東京都内の戸建て専門、全メーカー対応。工事費込みの総額表示、写真3枚で当日見積もり、止まる前の無料点検も受付。東京都の補助金（最大10万円/台）の申請代行。">
 <link rel="icon" href="../../brand/denkaeru/icon.svg" type="image/svg+xml">
 <title>デンカエルのパワコン交換</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,6 +113,13 @@ nav.gnav a:hover{color:var(--frog-text)}
 .trust .v.ph{color:var(--muted);font-size:16px}
 
 .probs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.precheck{margin-top:28px;background:var(--cream);border:2px solid var(--sun);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:12px 32px;align-items:center}
+.precheck h3{font-size:clamp(21px,2.6vw,26px);font-weight:900;color:var(--navy);margin:4px 0 8px}
+.precheck p{color:var(--fg);font-size:15px}
+.pc-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pc-list li{position:relative;padding-left:30px;font-weight:700;color:var(--navy);font-size:15px}
+.pc-list li::before{content:"";position:absolute;left:0;top:.35em;width:20px;height:20px;border-radius:50%;background:var(--frog) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.pc-btn{grid-column:1/-1;justify-self:center;min-width:min(100%,360px);margin-top:8px}
 .prob{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:4px;align-content:start}
 .prob .num{font-size:26px;color:var(--red);line-height:1.2}
 .prob b{font-size:17px;line-height:1.5}
@@ -234,6 +241,7 @@ dl.dl dt{font-weight:700;color:var(--navy)}
 
 footer{background:var(--navy-deep);color:#c9d4dd;font-size:13px;padding-block:28px 120px}
 footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
 
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);
   padding:8px max(10px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));
@@ -271,6 +279,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .marks b{font-size:14px}
   .marks div{font-size:10px}
   .reasons,.probs{grid-template-columns:1fr}
+  .precheck{grid-template-columns:1fr;padding:22px 18px}
   .reason{grid-template-columns:120px 1fr;grid-template-rows:auto}
   .reason img{height:100%;aspect-ratio:auto}
   .reason div{padding:12px 14px}
@@ -326,7 +335,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="hero">
   <div class="in">
     <div class="txt">
-      <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">全メーカー対応</span></div>
+      <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">全メーカー対応</span><span class="w">止まる前の無料点検も</span></div>
       <h1>止まったパワコン、<br><em>最短翌日</em>に<br>カエます。</h1>
       <p class="sub">写真3枚を送るだけ。補助金を引いた「総額」を、その日のうちにお知らせします。</p>
       <div class="marks">
@@ -375,6 +384,20 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="prob"><span class="num">10年+</span><b>設置から10年以上</b><span>メーカー保証が切れている</span></div>
       <div class="prob"><span class="num">？</span><b>販売店に連絡がつかない</b><span>廃業・移転していた</span></div>
     </div>
+    <div class="precheck" id="check">
+      <div class="pc-txt">
+        <span class="kicker">まだ動いている方へ</span>
+        <h3>止まる前に、無料で点検します</h3>
+        <p>パワコンの寿命は10〜15年が目安です。発電が落ちていないか、交換が必要になるのはいつ頃かを、電気工事士が無料で確認します。交換が不要なら、そうお伝えします。</p>
+      </div>
+      <ul class="pc-list">
+        <li>発電量のチェック（売電の明細と比べます）</li>
+        <li>本体・配線・ランプの状態確認</li>
+        <li>エラー履歴の確認</li>
+        <li>交換時期の目安と、補助金の見込みのご案内</li>
+      </ul>
+      <a class="btn btn-tel pc-btn" href="#form" data-check="f-s5">無料点検を申し込む</a>
+    </div>
   </div>
 </section>
 
@@ -384,7 +407,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="reasons">
       <div class="reason"><img src="img/reason-speed.jpg" alt="工事車両で住宅に到着した電気工事士" loading="lazy" width="1400" height="875"><div><span class="no">01</span><b>スピード交換</b><span>写真見積もりは当日中。現地確認は最短翌日、工事は約半日です。</span></div></div>
       <div class="reason"><img src="img/reason-estimate.jpg" alt="見積書を説明する担当者とご夫婦" loading="lazy" width="1400" height="875"><div><span class="no">02</span><b>総額でお見積もり</b><span>本体・工事・撤去処分まで込み。補助金を引いた後の金額も書面でお渡しします。</span></div></div>
-      <div class="reason"><img src="img/reason-wiring.jpg" alt="パワコンの配線作業をする電気工事士の手元" loading="lazy" width="1400" height="875"><div><span class="no">03</span><b>有資格者が施工</b><span>電気工事士が施工します。他社メーカー製への交換にも対応します。</span></div></div>
+      <div class="reason"><img src="img/reason-wiring.jpg" alt="パワコンの配線作業をする電気工事士の手元" loading="lazy" width="1400" height="875"><div><span class="no">03</span><b>有資格者が施工</b><span>資格を持つ提携の電気工事士が施工します。他社メーカー製への交換にも対応します。</span></div></div>
       <div class="reason"><img src="img/reason-warranty.jpg" alt="お客様と発電モニターを確認する電気工事士" loading="lazy" width="1400" height="875"><div><span class="no">04</span><b>工事保証10年 無料</b><span>工事のあとも、デンカエルが責任を持って見守ります。</span></div></div>
     </div>
   </div>
@@ -441,7 +464,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <li><img src="img/logos/qcells.svg" alt="Qセルズ" width="135" height="39" style="--h:39px" loading="lazy"><span>Qセルズ</span></li>
       <li><img src="img/logos/canadian.png" alt="カナディアンソーラー" width="191" height="29" style="--h:29px" loading="lazy"><span>カナディアンソーラー</span></li>
       <li><img src="img/logos/nichicon.svg" alt="ニチコン" width="166" height="32" style="--h:32px" loading="lazy"><span>ニチコン<small>蓄電池・ハイブリッド</small></span></li>
-      <li><img src="img/logos/tesla.svg" alt="テスラ" width="211" height="25" style="--h:25px" loading="lazy"><span>テスラ<small>蓄電池</small></span></li>
+      <li><img src="img/logos/tesla.svg" alt="テスラ" width="211" height="25" style="--h:25px" loading="lazy"><span>テスラ<small>蓄電池一体型</small></span></li>
       <li><img src="img/logos/xsol.png" alt="XSOL" width="91" height="46" style="--h:46px" loading="lazy"><span>XSOL</span></li>
       <li><img src="img/logos/dmm.svg" alt="DMM energy" width="184" height="30" style="--h:30px" loading="lazy"><span>DMM energy</span></li>
     </ul>
@@ -488,6 +511,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="faq">
       <details><summary>蓄電池などを勧められませんか？</summary><div class="a">パワコン交換だけのご相談で大丈夫です。蓄電池はご希望の方にだけご案内します。見積書には「普通のパワコン交換」の金額をいちばん上に載せています。</div></details>
       <details><summary>違うメーカーのパワコンに交換できますか？</summary><div class="a">多くの場合できます。パネルとの相性と出力を確認して、合う機種をご提案します。メーカーや出力を変える場合に必要な電力会社などへの手続きもデンカエルで行います。</div></details>
+      <details><summary>まだ動いていますが、点検だけお願いできますか？</summary><div class="a">はい、無料で点検します。設置から10年を過ぎたら、一度の点検をおすすめしています。発電の状態と、交換が必要になる時期の目安、補助金の見込みをお伝えします。点検のあとに交換をしつこくお勧めすることはありません。</div></details>
       <details><summary>見積もりにお金はかかりますか？</summary><div class="a">写真見積もりと現地確認は無料です。見積書をお届けしたあとにお断りいただいても、費用は一切かかりません。</div></details>
       <details><summary>工事はどれくらいかかりますか？ 停電しますか？</summary><div class="a">工事はおよそ半日です。作業中に一時的にブレーカーを切ることがありますが、時間は事前にお知らせします。</div></details>
       <details><summary>補助金は必ずもらえますか？</summary><div class="a">東京都の要件を満たす場合に交付されます。現地確認の際に対象になるかを確認し、見積書に補助金の見込み額を記載します。予算の上限に達すると受付が終了することがあります。</div></details>
@@ -528,11 +552,11 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <label for="f-s2"><input type="checkbox" id="f-s2" name="s" value="zero">発電ゼロ</label>
           <label for="f-s3"><input type="checkbox" id="f-s3" name="s" value="noise">異音</label>
           <label for="f-s4"><input type="checkbox" id="f-s4" name="s" value="age">10年以上たった</label>
-          <label for="f-s5"><input type="checkbox" id="f-s5" name="s" value="check">点検だけ希望</label>
+          <label for="f-s5"><input type="checkbox" id="f-s5" name="s" value="check">動いているが無料点検を希望</label>
         </div>
       </fieldset>
       <label for="f-note">ご相談内容（任意）<textarea id="f-note" name="note" placeholder="例：昨日からモニターにエラーが出て、発電が止まっています"></textarea></label>
-      <p class="agree">送信すると、個人情報の取り扱いに同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
+      <p class="agree">送信すると、<a href="privacy.html">個人情報の取り扱い</a>に同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
       <button class="btn btn-tel" type="submit">この内容で相談する（無料）</button>
       <p class="thanks" id="thanks" hidden></p>
     </form>
@@ -542,7 +566,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer>
   <div class="in">
-    <span>運営：株式会社レオフォース｜お問い合わせ：0120-879-461／info@leoforce.co.jp｜[所在地]｜[電気工事業の登録番号]｜[特定商取引法に基づく表記]｜[プライバシーポリシー]<br>※掲載している人物・施工の写真はイメージです。</span>
+    <span>運営：株式会社レオフォース｜〒151-0051 東京都渋谷区千駄ケ谷5-27-5 リンクスクエア新宿 16F<br>お問い合わせ：0120-879-461／info@leoforce.co.jp｜<a href="tokushoho.html">特定商取引法に基づく表記</a>｜<a href="privacy.html">プライバシーポリシー</a><br>※掲載している人物・施工の写真はイメージです。</span>
     <span>© デンカエル</span>
   </div>
 </footer>
@@ -593,5 +617,8 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 })();
 </script>
 
+<script>
+document.querySelectorAll('[data-check]').forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.dataset.check);if(c)c.checked=true;});});
+</script>
 </body>
 </html>
