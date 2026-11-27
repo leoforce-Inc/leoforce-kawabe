@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="デンカエルのパワコン交換。東京都内の戸建て専門、全メーカー対応。工事費込みの総額表示、写真3枚で当日見積もり、止まる前の無料点検も受付。東京都の補助金（最大10万円/台）の申請代行。">
 <link rel="icon" href="../../brand/denkaeru/icon.svg" type="image/svg+xml">
-<title>デンカエルのパワコン交換</title>
+<title>太陽光のパワコン交換｜デンカエル</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -114,6 +114,18 @@ nav.gnav a:hover{color:var(--frog-text)}
 .trust .v.ph{color:var(--muted);font-size:16px}
 
 .probs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.hero .pre{font-family:var(--display);font-weight:700;font-size:clamp(17px,2vw,21px);color:#ffe3a3;margin-bottom:6px;letter-spacing:.02em}
+.hero .pre b{color:#fff;border-bottom:3px solid var(--sun);padding-bottom:1px}
+.whatis{margin-top:28px;background:#fff;border-radius:var(--r);box-shadow:var(--sh-1);padding:28px;display:grid;grid-template-columns:1fr 1.05fr;gap:16px 32px;align-items:center}
+.whatis h3{font-size:clamp(19px,2.3vw,23px);font-weight:900;color:var(--navy);margin:4px 0 8px}
+.whatis p{font-size:15px;color:var(--fg)}
+.wi-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:22px;align-items:center}
+.wi-flow li{position:relative;background:var(--pale);border-radius:10px;padding:14px 10px;display:grid;gap:2px;justify-items:center;text-align:center}
+.wi-flow li:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:12px;height:16px;transform:translateY(-50%);background:var(--sun);clip-path:polygon(0 0,100% 50%,0 100%)}
+.wi-flow li.hl{background:var(--cream);border:2px solid var(--sun)}
+.wi-flow img{width:100%;max-width:140px;aspect-ratio:16/10;object-fit:contain;mix-blend-mode:multiply}
+.wi-flow b{font-family:var(--display);font-size:16px;color:var(--navy)}
+.wi-flow span{font-size:12.5px;color:var(--muted);line-height:1.5}
 .precheck{margin-top:28px;background:var(--cream);border:2px solid var(--sun);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:12px 32px;align-items:center}
 .precheck h3{font-size:clamp(21px,2.6vw,26px);font-weight:900;color:var(--navy);margin:4px 0 8px}
 .precheck p{color:var(--fg);font-size:15px}
@@ -389,6 +401,9 @@ footer a{color:#fff}
   .hero .ctas{grid-template-columns:1fr}
   .reasons,.probs{grid-template-columns:1fr}
   .precheck{grid-template-columns:1fr;padding:22px 18px}
+  .whatis{grid-template-columns:1fr;padding:22px 18px}
+  .wi-flow{grid-template-columns:1fr;gap:18px}
+  .wi-flow li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%) rotate(90deg)}
   .reason{grid-template-columns:120px 1fr;grid-template-rows:auto}
   .reason img{height:100%;aspect-ratio:auto}
   .reason div{padding:12px 14px}
@@ -441,7 +456,7 @@ footer a{color:#fff}
   <div class="in">
     <a class="logo" href="#top" aria-label="デンカエル パワコン交換専門店 トップへ">
       <svg aria-hidden="true"><use href="#frog"/></svg>
-      <span class="txt"><span class="tag">パワコン交換専門店</span><span class="name"><span class="d">デン</span><span class="k">カエル</span></span></span>
+      <span class="txt"><span class="tag">太陽光パワコン交換専門店</span><span class="name"><span class="d">デン</span><span class="k">カエル</span></span></span>
     </a>
     <div class="dealer"><span class="badge">全メーカー対応</span></div>
     <nav class="gnav" aria-label="メニュー"><a href="#price">費用</a><a href="#reasons">選ばれる理由</a><a href="#flow">交換の流れ</a><a href="#faq">よくある質問</a></nav>
@@ -458,11 +473,12 @@ footer a{color:#fff}
   <div class="in">
     <div class="txt">
       <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">全メーカー対応</span><span class="w">止まる前の無料点検も</span></div>
+      <p class="pre">太陽光の発電が<b>止まった・減った</b>ら</p>
       <h1>止まったパワコン、<br><em>最短翌日</em>に<br>カエます。</h1>
-      <p class="sub">写真3枚を送るだけ。補助金を引いた「総額」を、その日のうちにお知らせします。</p>
+      <p class="sub">原因の多くは「パワコン」の故障です。写真3枚を送るだけで、補助金を引いた「総額」をその日のうちにお知らせします。</p>
       <ul class="marks" aria-label="デンカエルの4つの安心">
         <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">工事費・処分費</span><b>込み総額</b></li>
-        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">工事保証</span><b>10年無料</b></li>
+        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">メーカー保証</span><b>15〜20年</b></li>
         <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">補助金申請</span><b>代行0円</b></li>
         <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">その場で</span><b>契約なし</b></li>
       </ul>
@@ -499,12 +515,24 @@ footer a{color:#fff}
 
 <section class="band">
   <div class="in">
-    <div class="head"><span class="kicker">こんなとき、ご相談ください</span><h2>突然、発電が止まった！</h2></div>
+    <div class="head"><span class="kicker">こんなとき、ご相談ください</span><h2>太陽光の発電が、止まった・減った！</h2></div>
     <div class="probs">
       <div class="prob"><span class="num">E-○○</span><b>エラー番号が出ている</b><span>赤いランプの点灯・点滅も</span></div>
-      <div class="prob"><span class="num">0.0 kW</span><b>晴れているのに発電ゼロ</b><span>売電の明細が急に減った</span></div>
+      <div class="prob"><span class="num">0.0 kW</span><b>発電ゼロ・少ない</b><span>晴れているのに、売電の明細が急に減った</span></div>
       <div class="prob"><span class="num">10年+</span><b>設置から10年以上</b><span>メーカー保証が切れている</span></div>
       <div class="prob"><span class="num">？</span><b>販売店に連絡がつかない</b><span>廃業・移転していた</span></div>
+    </div>
+    <div class="whatis">
+      <div class="wi-txt">
+        <span class="kicker">パワコンって何？</span>
+        <h3>太陽光の電気を、家で使える電気に変える機械です</h3>
+        <p>屋根のパネルがつくる電気は、そのままでは家で使えません。家の外壁などについている「パワコン（パワーコンディショナ）」が、家庭用の電気に変えています。パネルは20〜30年もちますが、パワコンの寿命は10〜15年。発電が止まった・減ったときは、まずパワコンを疑います。</p>
+      </div>
+      <ol class="wi-flow" aria-label="太陽光の電気の流れ">
+        <li><b>太陽光パネル</b><span>屋根で発電</span></li>
+        <li class="hl"><img src="img/plan-standard.jpg" alt="パワコン（パワーコンディショナ）の本体" loading="lazy" width="1400" height="875"><b>パワコン</b><span>家庭用の電気に変換</span></li>
+        <li><b>家・売電</b><span>家で使う／電力会社に売る</span></li>
+      </ol>
     </div>
     <div class="precheck" id="check">
       <div class="pc-txt">
@@ -530,7 +558,7 @@ footer a{color:#fff}
       <div class="reason"><img src="img/reason-speed.jpg" alt="工事車両で住宅に到着した電気工事士" loading="lazy" width="1400" height="875"><div><span class="no">01</span><b>スピード交換</b><span>写真見積もりは当日中。現地確認は最短翌日、工事は約半日です。</span></div></div>
       <div class="reason"><img src="img/reason-estimate.jpg" alt="見積書を説明する担当者とご夫婦" loading="lazy" width="1400" height="875"><div><span class="no">02</span><b>総額でお見積もり</b><span>本体・工事・撤去処分まで込み。補助金を引いた後の金額も書面でお渡しします。</span></div></div>
       <div class="reason"><img src="img/reason-wiring.jpg" alt="パワコンの配線作業をする電気工事士の手元" loading="lazy" width="1400" height="875"><div><span class="no">03</span><b>有資格者が施工</b><span>資格を持つ提携の電気工事士が施工します。他社メーカー製への交換にも対応します。</span></div></div>
-      <div class="reason"><img src="img/reason-warranty.jpg" alt="お客様と発電モニターを確認する電気工事士" loading="lazy" width="1400" height="875"><div><span class="no">04</span><b>工事保証10年 無料</b><span>工事のあとも、デンカエルが責任を持って見守ります。</span></div></div>
+      <div class="reason"><img src="img/reason-warranty.jpg" alt="お客様と発電モニターを確認する電気工事士" loading="lazy" width="1400" height="875"><div><span class="no">04</span><b>メーカー保証15〜20年</b><span>交換するパワコンには、メーカーの製品保証が15〜20年つきます。期間はメーカー・機種によって異なります。</span></div></div>
     </div>
   </div>
 </section>
@@ -631,6 +659,8 @@ footer a{color:#fff}
   <div class="in">
     <div class="faq-head"><svg aria-hidden="true"><use href="#frog"/></svg><h2>よくあるご質問</h2></div>
     <div class="faq">
+      <details><summary>太陽光の発電量が減ったのは、パワコンが原因ですか？</summary><div class="a">パネルの汚れや影、季節や天気でも発電量は変わります。ただ、晴れているのに急に大きく減った・ゼロになった場合は、パワコンの故障が多い原因です。無料点検で、パネルとパワコンのどちらが原因かを確かめます。</div></details>
+      <details><summary>交換したパワコンに保証はつきますか？</summary><div class="a">交換するパワコンには、メーカーの製品保証が15〜20年つきます。期間はメーカー・機種によって異なるため、見積書に記載してお渡しします。</div></details>
       <details><summary>蓄電池などを勧められませんか？</summary><div class="a">パワコン交換だけのご相談で大丈夫です。蓄電池はご希望の方にだけご案内します。見積書には「普通のパワコン交換」の金額をいちばん上に載せています。</div></details>
       <details><summary>違うメーカーのパワコンに交換できますか？</summary><div class="a">多くの場合できます。パネルとの相性と出力を確認して、合う機種をご提案します。メーカーや出力を変える場合に必要な電力会社などへの手続きもデンカエルで行います。</div></details>
       <details><summary>まだ動いていますが、点検だけお願いできますか？</summary><div class="a">はい、無料で点検します。設置から10年を過ぎたら、一度の点検をおすすめしています。発電の状態と、交換が必要になる時期の目安、補助金の見込みをお伝えします。点検のあとに交換をしつこくお勧めすることはありません。</div></details>
