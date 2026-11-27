@@ -492,7 +492,7 @@ footer a{color:#fff}
     <div class="t"><span class="k">写真見積もり</span><span class="v">当日中に返信</span></div>
     <div class="t"><span class="k">現地確認</span><span class="v">最短 翌日</span></div>
     <div class="t"><span class="k">交換工事</span><span class="v">約半日</span></div>
-    <div class="t"><span class="k">施工実績</span><span class="v ph">[実績件数]件</span></div>
+    <div class="t"><span class="k">太陽光・蓄電池の取次実績</span><span class="v">1,000件以上</span></div>
     <div class="t"><span class="k">対応メーカー</span><span class="v">全メーカー</span></div>
   </div>
 </div>
@@ -546,7 +546,7 @@ footer a{color:#fff}
       <div class="photo"><img src="img/photo-error.jpg" alt="パワコンのエラー表示と赤いランプの見本" loading="lazy" width="1200" height="900"><div><b><i>2</i>エラー表示・ランプ</b><span>点滅していれば動画でも</span></div></div>
       <div class="photo"><img src="img/photo-monitor.jpg" alt="0.0kWと表示された室内の発電モニターの見本" loading="lazy" width="1200" height="900"><div><b><i>3</i>室内の発電モニター</b><span>ない場合は売電の明細でも</span></div></div>
     </div>
-    <div class="center-cta"><a class="btn btn-line" href="https://line.me/R/ti/p/@095xsxkt?oat_content=url" target="_blank" rel="noopener" data-cta="line"><svg aria-hidden="true"><use href="#i-line"/></svg>LINEで写真を送る（無料）</a></div>
+    <div class="center-cta"><a class="btn btn-line" href="https://lin.ee/ZmZP0pf" target="_blank" rel="noopener" data-cta="line"><svg aria-hidden="true"><use href="#i-line"/></svg>LINEで写真を送る（無料）</a></div>
   </div>
 </section>
 
@@ -719,7 +719,7 @@ footer a{color:#fff}
   document.addEventListener('click',function(e){
     var a=e.target.closest('a');if(!a)return;
     var h=a.getAttribute('href')||'',ch='';
-    if(h.indexOf('tel:')===0)ch='tel';else if(h.indexOf('line.me')>-1)ch='line';else if(h==='#line')ch='line_guide';else if(h==='#form')ch='form';
+    if(h.indexOf('tel:')===0)ch='tel';else if(/line\.me|lin\.ee/.test(h))ch='line';else if(h==='#line')ch='line_guide';else if(h==='#form')ch='form';
     if(ch)push({event:'lp_cta_click',cta_channel:ch,cta_placement:placement(a)});
   });
 
