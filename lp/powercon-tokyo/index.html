@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="東京都内の戸建て向けパワコン（パワーコンディショナ）交換の専門窓口。工事費込みの価格表示、写真3枚で当日概算、東京都の補助金（最大10万円/台）の申請代行。">
+<title>東京パワコン交換窓口</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 1カラムのスマホ優先LP。全幅の帯を交互に置き、内側は最大1040px。画面下に固定CTA（スマホのみ）。
+   読み手は60〜70代：本文17px、ボタンは高さ56px以上、コントラストを強めに。 */
+:root{
+  --bg:#f3f6f8; --surface:#ffffff; --fg:#14202b; --muted:#4d5b68; --line:#d5dde4;
+  --ink:#16344d; --ink-2:#22496a;
+  --sun:#f0a81c; --sun-deep:#b57a06; --sun-soft:#fff4d9;
+  --line-green:#06c755; --alert:#c62f22; --good:#2f7d4f;
+  --on-ink:#ffffff; --on-sun:#1d1400;
+  --display:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d151c; --surface:#15212c; --fg:#e8eef3; --muted:#a3b1bd; --line:#2a3a48;
+  --ink:#0f2638; --ink-2:#1b3d58; --sun:#f5b73e; --sun-deep:#f5b73e; --sun-soft:#2b2412;
+  --alert:#ff7a6b; --good:#5cc489; --on-ink:#f3f7fa; --on-sun:#1d1400; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d151c; --surface:#15212c; --fg:#e8eef3; --muted:#a3b1bd; --line:#2a3a48;
+  --ink:#0f2638; --ink-2:#1b3d58; --sun:#f5b73e; --sun-deep:#f5b73e; --sun-soft:#2b2412;
+  --alert:#ff7a6b; --good:#5cc489; --on-ink:#f3f7fa; --on-sun:#1d1400; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.85;-webkit-text-size-adjust:100%}
+.in{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.4;text-wrap:balance;margin:0}
+h2{font-size:clamp(24px,4.4vw,34px);font-weight:900;color:var(--ink)}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.band{padding-block:56px}
+.band.alt{background:var(--surface)}
+.sec-head{display:grid;gap:10px;margin-bottom:28px;max-width:720px}
+.sec-head .kicker{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.06em;color:var(--sun-deep)}
+.sec-head p{color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* prototype banner */
+.proto{background:var(--sun-soft);color:var(--fg);font-size:13px;line-height:1.6;padding-block:8px;border-bottom:1px solid var(--line)}
+
+/* header */
+header.site{background:var(--surface);border-bottom:1px solid var(--line)}
+header.site .in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:36px;height:36px;flex:none}
+.logo b{font-family:var(--display);font-weight:900;font-size:18px;color:var(--ink);line-height:1.2;display:block}
+.logo small{font-size:11px;color:var(--muted);display:block;line-height:1.3}
+.hd-tel{text-align:right;text-decoration:none;line-height:1.3}
+.hd-tel .num{font-size:20px;font-weight:600;color:var(--ink);display:block;white-space:nowrap}
+.hd-tel small{font-size:11px;color:var(--muted)}
+
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:10px 20px;border-radius:var(--r);font-family:var(--display);font-weight:900;font-size:18px;text-decoration:none;border:0;cursor:pointer;text-align:center;line-height:1.35}
+.btn small{display:block;font-family:var(--body);font-weight:500;font-size:12px}
+.btn-line{background:var(--line-green);color:#fff;box-shadow:0 3px 0 #04913e}
+.btn-tel{background:var(--sun);color:var(--on-sun);box-shadow:0 3px 0 var(--sun-deep)}
+.btn-ghost{background:transparent;color:var(--fg);border:2px solid var(--line)}
+.btn:active{transform:translateY(2px);box-shadow:none}
+.btn svg{width:26px;height:26px;flex:none}
+
+/* hero */
+.hero{background:var(--ink);color:var(--on-ink);overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:48px 56px}
+.hero .area{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 14px;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,6vw,50px);font-weight:900;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--sun);display:inline-block}
+.hero .sub{font-size:clamp(16px,2.4vw,19px);margin-top:14px;opacity:.95;max-width:34em}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px;padding:0;list-style:none}
+.hero .badges li{font-size:14px;font-weight:700;border:1.5px solid var(--sun);color:var(--sun);border-radius:8px;padding:4px 12px}
+.hero .ctas{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
+.hero .promise{font-size:13px;opacity:.85;margin-top:12px}
+.led{animation:blink 1.4s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.led{animation:none}html{scroll-behavior:auto}}
+
+/* campaign ribbon */
+.ribbon{background:var(--sun);color:var(--on-sun);font-weight:700;font-size:14px;line-height:1.5;padding-block:8px;text-align:center}
+.ribbon b{font-family:var(--display);font-weight:900}
+.ribbon a{color:inherit}
+
+/* hero price card */
+.pcard{background:var(--surface);color:var(--fg);border-radius:16px;padding:20px 20px 18px;display:grid;gap:8px;box-shadow:0 18px 40px rgba(0,0,0,.28);position:relative;min-width:0}
+.pcard .stamp{position:absolute;top:-14px;right:14px;background:var(--alert);color:#fff;font-family:var(--display);font-weight:900;font-size:13px;border-radius:999px;padding:4px 12px}
+.pcard .t{font-family:var(--display);font-weight:700;font-size:15px;color:var(--muted)}
+.pcard .pr{font-family:var(--display);font-weight:900;color:var(--ink);font-size:15px;line-height:1.2}
+.pcard .pr .num{font-family:var(--mono);font-weight:600;font-size:44px;letter-spacing:-.03em}
+.pcard .arrow{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.pcard .arrow::before,.pcard .arrow::after{content:"";flex:1;height:1px;background:var(--line)}
+.pcard .after{background:var(--sun-soft);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700}
+.pcard .after .num{font-size:28px;color:var(--alert);font-weight:600}
+.pcard ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:4px;font-size:14px}
+.pcard li::before{content:"✓";color:var(--good);font-weight:900;margin-right:6px}
+
+/* trust numbers */
+.trust{background:var(--surface);border-bottom:1px solid var(--line)}
+.trust .in{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-block:6px}
+.trust .t{padding:16px 12px;text-align:center;display:grid;gap:2px;border-right:1px solid var(--line)}
+.trust .t:last-child{border-right:0}
+.trust .k{font-size:13px;color:var(--muted);font-weight:700}
+.trust .v{font-family:var(--display);font-weight:900;color:var(--ink);font-size:16px;line-height:1.3}
+.trust .v .num{font-family:var(--mono);font-weight:600;font-size:30px;color:var(--sun-deep)}
+
+/* catalog */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:18px;scrollbar-width:thin}
+.tabs button{flex:none;font:inherit;font-weight:700;font-size:15px;border:2px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:8px 18px;cursor:pointer;min-height:44px}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.cat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.alt .item{background:var(--bg)}
+.item .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.item .mk{font-size:13px;font-weight:700;color:var(--muted)}
+.item .lbl{font-size:12px;font-weight:700;border-radius:6px;padding:1px 8px;background:var(--ink);color:var(--on-ink);white-space:nowrap}
+.item .lbl.hb{background:var(--sun);color:var(--on-sun)}
+.item h3{font-size:17px}
+.item .spec{display:flex;flex-wrap:wrap;gap:6px;font-size:12px}
+.item .spec span{border:1px solid var(--line);border-radius:6px;padding:0 8px;color:var(--muted)}
+.item .prices{display:grid;gap:4px;border-top:1px dashed var(--line);padding-top:10px}
+.item .r1{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted)}
+.item .r1 .num{font-size:20px;color:var(--fg);font-weight:600}
+.item .r2{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:13px}
+.item .r2 .num{font-size:28px;color:var(--alert);font-weight:600}
+.item .btn{min-height:48px;font-size:15px}
+.item.ask{border:2px dashed var(--sun);background:var(--sun-soft);align-content:center;text-align:center}
+
+/* checklist */
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.check{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px;cursor:pointer;font-weight:700;line-height:1.5;min-width:0}
+.alt .check{background:var(--bg)}
+.check input{width:24px;height:24px;margin:2px 0 0;accent-color:var(--ink-2);flex:none}
+.check small{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
+.check:has(input:checked){border-color:var(--sun);background:var(--sun-soft)}
+.verdict{margin-top:16px;border-radius:var(--r);padding:16px 18px;background:var(--surface);border:1px solid var(--line);font-weight:700}
+.alt .verdict{background:var(--bg)}
+.verdict.hot{border-color:var(--alert);color:var(--alert)}
+
+/* price */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start;min-width:0}
+.plan.main{border:2px solid var(--sun)}
+.plan .tag{font-size:13px;font-weight:700;color:var(--sun-deep)}
+.plan .p-before{font-size:14px;color:var(--muted)}
+.plan .p-before .num{font-size:18px}
+.plan .p-after{font-family:var(--display);font-weight:900;color:var(--ink);font-size:15px;line-height:1.3}
+.plan .p-after .num{font-family:var(--mono);font-size:38px;font-weight:600;letter-spacing:-.02em}
+.plan ul{margin:0;padding-left:1.2em;font-size:14px;color:var(--muted)}
+.fine{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.7}
+
+.sim{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.sim h3{margin-bottom:12px}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-size:15px;font-weight:700}
+.field .row{display:flex;align-items:center;gap:8px}
+.field input,.field select,.form input,.form select,.form textarea{font:inherit;font-size:18px;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);width:100%;min-height:52px}
+.field input{max-width:160px;text-align:right;font-family:var(--mono)}
+.sim-out{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:20px;display:grid;gap:8px}
+.sim-out .r{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:6px;font-size:15px}
+.sim-out .r .num{font-weight:600}
+.sim-out .big{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:4px}
+.sim-out .big .num{font-size:34px;color:var(--sun);font-weight:600}
+
+/* subsidy */
+.subsidy{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.half{background:var(--sun-soft);border-radius:var(--r);padding:26px;display:grid;gap:6px;text-align:center}
+.half .lbl{font-weight:700}
+.half .big{font-family:var(--display);font-weight:900;color:var(--ink);font-size:clamp(30px,5vw,44px);line-height:1.2}
+.half .big .num{font-family:var(--mono);font-weight:600}
+.half small{font-size:13px;color:var(--muted)}
+.dl{display:grid;grid-template-columns:7em 1fr;margin:0;border-top:1px solid var(--line)}
+.dl dt,.dl dd{margin:0;padding:12px 4px;border-bottom:1px solid var(--line)}
+.dl dt{font-weight:700;color:var(--ink)}
+.dl dd{min-width:0}
+
+/* reasons */
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.reason{display:grid;grid-template-columns:56px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.alt .reason{background:var(--bg)}
+.reason .ic{width:56px;height:56px;border-radius:14px;background:var(--ink);display:grid;place-items:center}
+.reason .ic svg{width:30px;height:30px}
+.reason p{font-size:15px;color:var(--muted);margin-top:4px}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 16px;display:grid;gap:6px;align-content:start;position:relative;min-width:0}
+.steps li::before{content:"STEP " counter(s);font-family:var(--mono);font-size:12px;font-weight:600;color:var(--sun-deep)}
+.steps li.pause{border:2px solid var(--sun);background:var(--sun-soft)}
+.steps b{font-family:var(--display);font-size:17px;line-height:1.45}
+.steps span{font-size:14px;color:var(--muted);line-height:1.6}
+.steps .when{font-size:12px;font-weight:700;color:var(--ink)}
+
+/* photo guide */
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.photo{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;min-width:0}
+.photo svg{width:100%;height:auto;display:block;background:var(--surface);border-bottom:1px solid var(--line)}
+.photo div{padding:16px}
+.photo b{font-family:var(--display);font-size:17px}
+.photo p{font-size:14px;color:var(--muted);margin-top:4px}
+
+/* makers */
+.makers{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+.makers li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-weight:700;font-size:15px}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{background:var(--surface);border:1px dashed var(--muted);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start;min-width:0}
+.alt .case{background:var(--bg)}
+.case .sample{justify-self:start;font-size:12px;font-weight:700;border:1px solid var(--muted);color:var(--muted);border-radius:6px;padding:0 8px}
+.case dl{display:grid;grid-template-columns:5em 1fr;margin:0;font-size:14px}
+.case dt{color:var(--muted)} .case dd{margin:0}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font-weight:700;position:relative;line-height:1.6}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:var(--mono);color:var(--sun-deep);margin-right:10px}
+.faq summary::after{content:"＋";position:absolute;right:18px;top:15px;color:var(--muted)}
+.faq details[open] summary::after{content:"－"}
+.faq .a{padding:0 18px 18px 18px;color:var(--muted);font-size:16px}
+
+/* final cta + form */
+.final{background:var(--ink);color:var(--on-ink)}
+.final h2{color:var(--on-ink)}
+.final .sec-head p{color:var(--on-ink);opacity:.85}
+.final-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}
+.final .ctas{display:grid;gap:12px}
+.final .telbox{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:16px;text-align:center}
+.final .telbox .num{font-size:30px;font-weight:600;color:var(--sun);display:block}
+.form{background:var(--surface);color:var(--fg);border-radius:var(--r);padding:22px;display:grid;gap:14px;min-width:0}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{font-weight:700;font-size:15px;display:grid;gap:6px}
+.form .req{font-size:11px;background:var(--alert);color:#fff;border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:2px}
+.form textarea{min-height:96px;resize:vertical}
+.form .chips{display:flex;flex-wrap:wrap;gap:8px}
+.form .chips label{display:inline-flex;align-items:center;gap:6px;font-weight:500;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+.form .chips input{width:18px;height:18px;min-height:0;accent-color:var(--ink-2)}
+.form .chips label:has(input:checked){border-color:var(--sun);background:var(--sun-soft)}
+.form fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.form legend{font-weight:700;font-size:15px;margin-bottom:6px;padding:0}
+.form .btn{width:100%}
+.form .agree{font-size:13px;color:var(--muted)}
+.thanks{background:var(--sun-soft);border-radius:10px;padding:14px;font-weight:700}
+
+/* footer */
+footer{background:var(--surface);border-top:1px solid var(--line);font-size:14px;color:var(--muted);padding-block:36px 120px}
+footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+footer h3{font-size:15px;color:var(--fg);margin-bottom:8px}
+footer dl{display:grid;grid-template-columns:6em 1fr;margin:0;gap:2px 8px}
+footer dd{margin:0}
+footer a{color:var(--ink-2)}
+footer .copy{margin-top:24px;font-size:12px}
+
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+  padding:8px max(10px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));
+  display:none;grid-template-columns:1.15fr .85fr;gap:8px;box-shadow:0 -6px 18px rgba(0,0,0,.08)}
+.sticky .btn{min-height:52px;font-size:16px;padding:6px 10px}
+.sticky .btn svg{width:22px;height:22px}
+
+@media (max-width:860px){
+  .hero .in{grid-template-columns:1fr;gap:12px;padding-block:28px 36px}
+  .hero h1{max-width:12em}
+  .price-grid,.cases,.photos{grid-template-columns:1fr}
+  .cat{grid-template-columns:1fr 1fr}
+  .trust .in{grid-template-columns:1fr 1fr}
+  .trust .t:nth-child(2){border-right:0}
+  .trust .t:nth-child(-n+2){border-bottom:1px solid var(--line)}
+
+  .sim,.subsidy,.final-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .reasons{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  .sticky{display:grid}
+  .hd-tel small{display:none}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .checks{grid-template-columns:1fr}
+  .cat{grid-template-columns:1fr}
+  .pcard .pr .num{font-size:38px}
+  .hero .ctas{grid-template-columns:1fr}
+  .form .two{grid-template-columns:1fr}
+  .logo small{display:none}
+  .logo b{font-size:16px;white-space:nowrap}
+  .hd-tel{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<!-- 公開前に削除：プロトタイプ表示 -->
+<div class="proto"><div class="in"><b>プロトタイプ</b>　サービス名・価格・連絡先・事例はダミーです。</div></div>
+
+<div class="ribbon"><div class="in"><b>令和8年度 東京都のパワコン交換補助金 受付中</b>　2027年3月31日まで（予算に達し次第終了）　<a href="#subsidy">詳しく</a></div></div>
+
+<header class="site">
+  <div class="in">
+    <a class="logo" href="#top" aria-label="東京パワコン交換窓口 トップへ">
+      <svg class="logo-mark" viewBox="0 0 36 36" aria-hidden="true"><rect x="3" y="5" width="30" height="26" rx="5" fill="var(--ink)"/><rect x="8" y="10" width="20" height="9" rx="2" fill="var(--sun)"/><circle cx="12" cy="25" r="2" fill="var(--sun)"/><rect x="17" y="24" width="11" height="2.4" rx="1.2" fill="var(--on-ink)" opacity=".6"/></svg>
+      <span><b>東京パワコン交換窓口</b><small>太陽光パワーコンディショナ交換の専門窓口</small></span>
+    </a>
+    <a class="hd-tel" href="tel:0120000000"><span class="num">0120-000-000</span><small>受付 9:00〜20:00（年中無休）</small></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="in">
+    <div>
+      <span class="area">東京都内の戸建て住宅が対象</span>
+      <h1>パワコン交換は、<br><em>都の補助金で</em><em>最大10万円</em>おトクに。</h1>
+      <p class="sub">パワコンとモニターの写真を3枚送るだけ。その日のうちに、補助金を差し引いた後の金額をお知らせします。</p>
+      <ul class="badges">
+        <li>工事費・撤去処分費 込み</li><li>工事保証10年 無料</li><li>補助金申請の代行 無料</li><li>その場で契約しません</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-line" href="#line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>
+          <span>LINEで写真見積もり<small>無料・当日中に返信</small></span>
+        </a>
+        <a class="btn btn-tel" href="tel:0120000000">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          <span>電話で相談する<small>0120-000-000</small></span>
+        </a>
+      </div>
+      <p class="promise">見積書はご訪問の後日にお届けします。その場で契約をお願いすることはありません。</p>
+    </div>
+    <!-- 価格カード -->
+    <div class="pcard" aria-label="標準交換の価格">
+      <span class="stamp">工事費込み</span>
+      <span class="t">パワコン標準交換（単機能・1台）</span>
+      <span class="pr"><span class="num">308,000</span>円〜<small style="font-size:13px;font-weight:500">（税込）</small></span>
+      <span class="arrow">東京都の補助金を使うと</span>
+      <div class="after"><span>実質</span><span><span class="num">208,000</span>円〜</span></div>
+      <ul><li>本体・取付工事・撤去処分まで込み</li><li>工事保証10年 無料</li><li>他社メーカーへの交換もOK</li></ul>
+      <a class="btn btn-line" href="#catalog" style="min-height:50px;font-size:16px">メーカー別の価格を見る</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust" aria-label="サービスの特長">
+  <div class="in">
+    <div class="t"><span class="k">工事保証</span><span class="v"><span class="num">10</span>年 無料</span></div>
+    <div class="t"><span class="k">写真見積もり</span><span class="v">当日中に<br>返信</span></div>
+    <div class="t"><span class="k">現地確認</span><span class="v">最短<span class="num">翌日</span></span></div>
+    <div class="t"><span class="k">補助金申請</span><span class="v">代行<span class="num">0</span>円</span></div>
+  </div>
+</div>
+
+<section class="band" id="catalog">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">メーカー・容量から探す</span>
+      <h2>交換後のパワコンと価格</h2>
+      <p>価格はすべて本体・取付工事・撤去処分費込み（税込）です。今のパワコンのメーカーを選んでください。型番が分からなくても、写真を送れば当社でお調べします。</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="メーカー" id="tabs"></div>
+    <div class="cat" id="cat" role="tabpanel" aria-live="polite"></div>
+    <p class="fine">※掲載している機種と価格はプロトタイプ用の例です。実際の後継機種・価格は仕入れ先の確定後に差し替えます。補助金を使った後の金額は、東京都の要件を満たした場合の目安です（税抜費用の1/2、1台あたり上限10万円）。</p>
+  </div>
+</section>
+
+<section class="band alt" id="check">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">セルフチェック</span>
+      <h2>こんな症状、出ていませんか？</h2>
+      <p>当てはまるものをタップしてください。パワコンの寿命は10〜15年と言われています。</p>
+    </div>
+    <div class="checks" id="checks">
+      <label class="check"><input type="checkbox" id="c1"><span>モニターや本体にエラー番号が出る<small>「E」で始まる番号、赤いランプの点灯・点滅など</small></span></label>
+      <label class="check"><input type="checkbox" id="c2"><span>晴れているのに発電量がゼロ、または極端に少ない<small>売電明細の金額が急に減った</small></span></label>
+      <label class="check"><input type="checkbox" id="c3"><span>本体から「ブーン」「ジー」という音がする<small>以前より大きい、焦げたにおいがする</small></span></label>
+      <label class="check"><input type="checkbox" id="c4"><span>太陽光を付けてから10年以上たった<small>2016年より前に設置した</small></span></label>
+      <label class="check"><input type="checkbox" id="c5"><span>メーカー保証が切れている<small>保証期間は一般的に10年です</small></span></label>
+      <label class="check"><input type="checkbox" id="c6"><span>設置した販売店に連絡がつかない<small>廃業・移転していた</small></span></label>
+    </div>
+    <p class="verdict" id="verdict" aria-live="polite">当てはまる項目をタップすると、目安が表示されます。</p>
+  </div>
+</section>
+
+<section class="band" id="price">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">料金の目安（工事費込み）</span>
+      <h2>本体・工事・撤去・処分まで、すべて込みの価格です</h2>
+      <p>補助金の金額は、費用の2分の1（1台あたり上限10万円、税抜の費用で計算）です。</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan main">
+        <span class="tag">いちばん多いご依頼</span>
+        <h3>標準交換（単機能パワコン）</h3>
+        <p class="p-before">通常価格 <span class="num">308,000</span>円〜（税込）</p>
+        <p class="p-after">補助金を使うと<br><span class="num">208,000</span>円〜</p>
+        <ul><li>同じ出力の後継機へ交換</li><li>他社メーカー製への交換も可能</li><li>工事はおよそ半日</li></ul>
+      </div>
+      <div class="plan">
+        <span class="tag">将来の備えに</span>
+        <h3>蓄電池対応タイプ（ハイブリッド）</h3>
+        <p class="p-before">通常価格 <span class="num">495,000</span>円〜（税込）</p>
+        <p class="p-after">補助金を使うと<br><span class="num">395,000</span>円〜</p>
+        <ul><li>あとから蓄電池を追加しても、パワコンを買い直す必要がない</li><li>ご希望の方のみご案内します</li></ul>
+      </div>
+      <div class="plan">
+        <span class="tag">まずは状態を知りたい方</span>
+        <h3>無料点検</h3>
+        <p class="p-before">発電の確認・エラー診断</p>
+        <p class="p-after"><span class="num">0</span>円</p>
+        <ul><li>交換が不要なら、そうお伝えします</li><li>点検だけでも大歓迎です</li></ul>
+      </div>
+    </div>
+    <p class="fine">※価格は目安です。設置状況（配線の延長、設置場所、台数）によって変わります。正式なお見積もりは現地確認のあと、書面でお届けします。<br>※補助金は東京都の要件を満たす場合に限り交付されます。交付は工事後の申請手続きを経てからになります。予算の上限に達すると受付が終了することがあります。</p>
+
+    <div class="sim" id="sim">
+      <div>
+        <h3>補助金でいくらになる？ かんたん計算</h3>
+        <div class="field">
+          <label for="sim-price">パワコン1台の費用（税込・円）</label>
+          <div class="row"><input id="sim-price" type="number" inputmode="numeric" value="308000" min="0" step="1000"><span>円</span></div>
+        </div>
+        <div class="field">
+          <label for="sim-units">交換する台数</label>
+          <select id="sim-units" style="max-width:160px"><option value="1">1台</option><option value="2">2台</option><option value="3">3台</option></select>
+        </div>
+      </div>
+      <div class="sim-out" aria-live="polite">
+        <div class="r"><span>費用の合計（税込）</span><span class="num" id="s-total"></span></div>
+        <div class="r"><span>補助金の見込み</span><span class="num" id="s-sub"></span></div>
+        <div class="big"><span>実質のご負担</span><span class="num" id="s-net"></span></div>
+        <small style="opacity:.8;font-size:12px">税抜費用の1/2（1台あたり上限10万円）で計算した目安です。</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="subsidy">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">東京都の補助金</span>
+      <h2>面倒な補助金の申請は、すべてこちらで代行します</h2>
+    </div>
+    <div class="subsidy">
+      <div class="half">
+        <span class="lbl">パワコンの交換費用の</span>
+        <span class="big"><span class="num">1/2</span> を補助</span>
+        <span class="lbl">1台あたり 上限<span class="num">10</span>万円</span>
+        <small>東京都「家庭における太陽光発電導入促進事業（パワーコンディショナ更新費用助成）」令和8年度</small>
+      </div>
+      <dl class="dl">
+        <dt>対象</dt><dd>都内の住宅で、すでに設置している太陽光発電を引き続き使うためのパワコン交換</dd>
+        <dt>補助額</dt><dd>機器費と工事費（税抜）の2分の1。1台あたり上限10万円</dd>
+        <dt>受付期間</dt><dd>令和8年6月30日〜令和9年3月31日（予算に達し次第終了の場合あり）</dd>
+        <dt>主な条件</dt><dd>新品（未使用品）のパワコンであること など</dd>
+        <dt>当社の代行</dt><dd>要件の確認、必要書類の作成、工事写真の撮影、申請手続きまで行います。お客様には書類へのご署名だけお願いします。</dd>
+      </dl>
+    </div>
+    <p class="fine">補助金の要件は年度ごとに変わることがあります。最新の内容は<a href="https://www.tokyo-co2down.jp/subsidy/powerconditioner-adiabatic-solar/r8/">クール・ネット東京の公式ページ</a>でご確認いただけます。お住まいの区市町村の補助と併用できる場合もあります。</p>
+  </div>
+</section>
+
+<section class="band" id="reasons">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">選ばれる理由</span>
+      <h2>パワコン交換だけを、きちんと。</h2>
+    </div>
+    <div class="reasons">
+      <div class="reason">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--sun)" d="M9 2h6v3h3l-2 5h3L9 22l2-8H7l2-12Z"/></svg></span>
+        <div><h3>パワコン交換の専門窓口</h3><p>主役はパワコンの交換です。エラー番号を見れば、どこが悪いかの見当がつきます。設置した販売店がなくなっていても対応します。</p></div>
+      </div>
+      <div class="reason">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--sun)" d="M4 6h3l2-2h6l2 2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg></span>
+        <div><h3>写真3枚で、当日中に概算</h3><p>LINEで写真を送るだけ。補助金を引いた後の金額まで、その日のうちにお知らせします。</p></div>
+      </div>
+      <div class="reason">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--sun)" d="M6 2h9l5 5v15H6V2Zm8 1.5V8h4.5L14 3.5ZM9 12h8v1.6H9V12Zm0 3.5h8v1.6H9v-1.6Z"/></svg></span>
+        <div><h3>その場で契約はいただきません</h3><p>現地を確認したあと、正式な見積書を後日お届けします。ご家族とゆっくりご相談ください。</p></div>
+      </div>
+      <div class="reason">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--sun)" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.9-4.9 1.4 1.4-6.3 6.3Z"/></svg></span>
+        <div><h3>工事のあとも安心の保証</h3><p>工事保証は当社が責任を持ちます。年に1回、発電の状態を確認するご連絡もしています。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="flow">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">ご依頼の流れ</span>
+      <h2>写真を送ってから、最短でおよそ1週間で工事</h2>
+      <p>機器の在庫や補助金の手続きによって前後します。</p>
+    </div>
+    <ol class="steps">
+      <li><span class="when">当日</span><b>写真を送る</b><span>LINEでパワコンの銘板、エラー表示、モニターの3枚を送ります。お電話でも受け付けます。</span></li>
+      <li><span class="when">当日</span><b>概算のお知らせ</b><span>補助金を引いた後の金額をお知らせします。</span></li>
+      <li><span class="when">2〜4日後</span><b>現地確認（30〜45分）</b><span>担当者と電気工事士がうかがい、設置状況を確認します。</span></li>
+      <li class="pause"><span class="when">後日</span><b>見積書をお届け</b><span>見積書と補助金の説明を書面でお送りします。ご納得いただけたらご契約ください。</span></li>
+      <li><span class="when">約1週間後</span><b>交換工事（約半日）</b><span>工事後に発電の再開を一緒に確認し、補助金の申請も当社で行います。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="line">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">LINE写真見積もり</span>
+      <h2>この3枚を撮って送るだけ</h2>
+      <p>うまく撮れなくても大丈夫です。分からないときは、こちらからご案内します。</p>
+    </div>
+    <div class="photos">
+      <div class="photo">
+        <svg viewBox="0 0 300 170" aria-hidden="true">
+          <rect x="70" y="20" width="160" height="130" rx="10" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>
+          <rect x="95" y="50" width="110" height="70" rx="4" fill="var(--surface)" stroke="var(--sun)" stroke-width="3" stroke-dasharray="6 4"/>
+          <g fill="var(--muted)"><rect x="105" y="62" width="60" height="6" rx="3"/><rect x="105" y="76" width="90" height="6" rx="3"/><rect x="105" y="90" width="76" height="6" rx="3"/><rect x="105" y="104" width="84" height="6" rx="3"/></g>
+        </svg>
+        <div><b>① 本体の銘板（型番シール）</b><p>本体の側面や下側に貼ってあるシール。メーカー名と型番が読めればOKです。</p></div>
+      </div>
+      <div class="photo">
+        <svg viewBox="0 0 300 170" aria-hidden="true">
+          <rect x="70" y="20" width="160" height="130" rx="10" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>
+          <rect x="100" y="44" width="100" height="50" rx="5" fill="#1c2a24"/>
+          <text x="150" y="77" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="600" fill="#ff6b57">E-0〇</text>
+          <circle cx="118" cy="116" r="7" fill="#ff3b2f"/><circle cx="182" cy="116" r="7" fill="var(--muted)" opacity=".5"/>
+        </svg>
+        <div><b>② エラー表示・ランプ</b><p>本体の表示窓やランプの様子。点滅している場合は動画でも構いません。</p></div>
+      </div>
+      <div class="photo">
+        <svg viewBox="0 0 300 170" aria-hidden="true">
+          <rect x="85" y="24" width="130" height="122" rx="10" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>
+          <rect x="98" y="38" width="104" height="70" rx="4" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="150" y="68" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="600" fill="var(--ink)">0.0 kW</text>
+          <text x="150" y="92" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="11" fill="var(--muted)">本日の発電量 0.0kWh</text>
+          <g fill="var(--muted)" opacity=".5"><circle cx="122" cy="126" r="6"/><circle cx="150" cy="126" r="6"/><circle cx="178" cy="126" r="6"/></g>
+        </svg>
+        <div><b>③ 室内の発電モニター</b><p>発電量が表示される室内の画面。モニターがないお宅は、売電の明細でも大丈夫です。</p></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,420px);justify-content:center;margin-top:28px">
+      <a class="btn btn-line" href="#line">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>
+        <span>LINEで友だち追加して写真を送る<small>営業目的の一斉配信はしません</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="makers">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">対応メーカー</span>
+      <h2>主要メーカーのパワコンに対応しています</h2>
+      <p>今のメーカーが撤退していたり後継機がなかったりする場合は、他社製への交換をご提案します。</p>
+    </div>
+    <ul class="makers">
+      <li>パナソニック</li><li>シャープ</li><li>京セラ</li><li>長州産業</li><li>三菱電機</li><li>オムロン</li><li>田淵電機（ダイヤゼブラ電機）</li><li>東芝</li><li>カナディアン・ソーラー</li><li>Qセルズ</li><li>ソーラーフロンティア</li><li>その他のメーカー</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="cases">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">施工事例</span>
+      <h2>都内での交換事例</h2>
+      <p>実際の施工が始まり次第、お客様の許可を得て掲載します。</p>
+    </div>
+    <div class="cases">
+      <div class="case"><span class="sample">掲載イメージ</span><h3>エラーで停止 → 他社製に交換</h3><dl><dt>地域</dt><dd>〇〇区</dd><dt>設置年</dt><dd>20〇〇年</dd><dt>症状</dt><dd>エラー表示で運転停止</dd><dt>工期</dt><dd>写真受付から〇日</dd><dt>ご負担</dt><dd>〇〇万円（補助金適用後）</dd></dl></div>
+      <div class="case"><span class="sample">掲載イメージ</span><h3>販売店が廃業 → 後継機に交換</h3><dl><dt>地域</dt><dd>〇〇市</dd><dt>設置年</dt><dd>20〇〇年</dd><dt>症状</dt><dd>発電量の低下</dd><dt>工期</dt><dd>写真受付から〇日</dd><dt>ご負担</dt><dd>〇〇万円（補助金適用後）</dd></dl></div>
+      <div class="case"><span class="sample">掲載イメージ</span><h3>2台同時に交換</h3><dl><dt>地域</dt><dd>〇〇区</dd><dt>設置年</dt><dd>20〇〇年</dd><dt>症状</dt><dd>1台が停止、もう1台も異音</dd><dt>工期</dt><dd>写真受付から〇日</dd><dt>ご負担</dt><dd>〇〇万円（補助金適用後）</dd></dl></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker">よくあるご質問</span>
+      <h2>ご依頼の前に、よく聞かれること</h2>
+    </div>
+    <div class="faq">
+      <details><summary>蓄電池などを勧められませんか？</summary><div class="a">パワコン交換のご相談だけで、もちろん大丈夫です。蓄電池は、ご希望の方にだけご案内しています。見積書には「普通のパワコン交換」の金額をいちばん上に載せています。</div></details>
+      <details><summary>今と違うメーカーのパワコンに交換できますか？</summary><div class="a">多くの場合できます。太陽光パネルとの相性や出力を確認したうえで、適した機種をご提案します。メーカーや出力を変える場合に必要な電力会社などへの手続きも当社で行います。</div></details>
+      <details><summary>工事はどれくらいかかりますか？ 停電しますか？</summary><div class="a">工事はおよそ半日です。作業中に一時的にブレーカーを切ることがありますが、時間は事前にお知らせします。</div></details>
+      <details><summary>補助金は必ずもらえますか？</summary><div class="a">東京都の要件を満たす場合に交付されます。現地確認の際に対象になるかを確認し、見積書に補助金の見込み額を記載します。予算の上限に達すると受付が終了することがあるため、お早めのご相談をおすすめしています。</div></details>
+      <details><summary>修理ではなく、交換しかないのですか？</summary><div class="a">症状によっては、点検や部品の交換で直る場合もあります。その場合は無理に交換をお勧めせず、そのようにお伝えします。</div></details>
+      <details><summary>見積もりや現地確認にお金はかかりますか？</summary><div class="a">写真見積もりと現地確認は無料です。見積書をお届けしたあとにお断りいただいても、費用は一切かかりません。</div></details>
+      <details><summary>契約したあとで取りやめることはできますか？</summary><div class="a">契約内容によってはクーリングオフの対象になります。ご契約時に書面でご説明します。</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band final" id="contact">
+  <div class="in">
+    <div class="sec-head">
+      <span class="kicker" style="color:var(--sun)">ご相談・お見積もり（無料）</span>
+      <h2>パワコンが止まったら、まずはご相談ください</h2>
+      <p>止まったままの日数だけ、発電した電気が無駄になっています。</p>
+    </div>
+    <div class="final-grid">
+      <div class="ctas">
+        <a class="btn btn-line" href="#line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>
+          <span>LINEで写真見積もり<small>いちばん早い方法です</small></span>
+        </a>
+        <div class="telbox">お電話でのご相談<a href="tel:0120000000" style="text-decoration:none"><span class="num">0120-000-000</span></a><small>受付 9:00〜20:00（年中無休）</small></div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <h3>フォームでのご相談</h3>
+        <div class="two">
+          <label for="f-name">お名前<span class="req">必須</span><input id="f-name" name="name" autocomplete="name" required></label>
+          <label for="f-tel">電話番号<span class="req">必須</span><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        </div>
+        <div class="two">
+          <label for="f-zip">郵便番号<span class="req">必須</span><input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="例 1770041" required></label>
+          <label for="f-maker">パワコンのメーカー<select id="f-maker" name="maker"><option>分からない</option><option>パナソニック</option><option>シャープ</option><option>京セラ</option><option>長州産業</option><option>三菱電機</option><option>オムロン</option><option>田淵電機</option><option>その他</option></select></label>
+        </div>
+        <fieldset>
+          <legend>いまの状態（いくつでも）</legend>
+          <div class="chips">
+            <label for="f-s1"><input type="checkbox" id="f-s1" name="s" value="error">エラー表示</label>
+            <label for="f-s2"><input type="checkbox" id="f-s2" name="s" value="zero">発電ゼロ</label>
+            <label for="f-s3"><input type="checkbox" id="f-s3" name="s" value="noise">異音</label>
+            <label for="f-s4"><input type="checkbox" id="f-s4" name="s" value="age">10年以上たった</label>
+            <label for="f-s5"><input type="checkbox" id="f-s5" name="s" value="check">点検だけ希望</label>
+          </div>
+        </fieldset>
+        <label for="f-note">ご相談内容（任意）<textarea id="f-note" name="note" placeholder="例：昨日からモニターにエラーが出て、発電が止まっています"></textarea></label>
+        <p class="agree">送信すると、<a href="#privacy">個人情報の取り扱い</a>に同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
+        <button class="btn btn-tel" type="submit">この内容で相談する（無料）</button>
+        <p class="thanks" id="thanks" hidden>送信内容を確認しました（プロトタイプのため、実際には送信されません）。</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <div class="cols">
+      <div>
+        <h3>運営会社</h3>
+        <dl><dt>会社名</dt><dd>〔会社名〕</dd><dt>所在地</dt><dd>〔所在地〕</dd><dt>電話</dt><dd>0120-000-000</dd><dt>許認可</dt><dd>〔電気工事業の登録番号など〕</dd></dl>
+      </div>
+      <div id="privacy">
+        <h3>個人情報の取り扱い</h3>
+        <p>いただいた情報は、お見積もり・ご連絡・工事・補助金申請の手続きにのみ使用します。〔プライバシーポリシーへのリンク〕</p>
+      </div>
+      <div>
+        <h3>表記</h3>
+        <p>〔特定商取引法に基づく表記〕<br>補助金の情報：<a href="https://www.tokyo-co2down.jp/subsidy/powerconditioner-adiabatic-solar/r8/">クール・ネット東京</a>（令和8年度）</p>
+      </div>
+    </div>
+    <p class="copy">© 東京パワコン交換窓口</p>
+  </div>
+</footer>
+
+<nav class="sticky" aria-label="お問い合わせ">
+  <a class="btn btn-line" href="#line"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></svg>LINEで写真見積もり</a>
+  <a class="btn btn-tel" href="tel:0120000000"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>電話する</a>
+</nav>
+
+<script>
+(function(){
+  // セルフチェック
+  var boxes=[].slice.call(document.querySelectorAll('#checks input'));
+  var verdict=document.getElementById('verdict');
+  function judge(){
+    var n=boxes.filter(function(b){return b.checked;}).length;
+    var urgent=document.getElementById('c1').checked||document.getElementById('c2').checked;
+    verdict.classList.toggle('hot',urgent);
+    if(n===0){verdict.textContent='当てはまる項目をタップすると、目安が表示されます。';}
+    else if(urgent){verdict.textContent='パワコンが停止しているかもしれません。止まっている間は発電した電気が使えません。写真を送っていただければ、当日中に状態と概算をお知らせします。';}
+    else if(n>=2){verdict.textContent=n+'つ当てはまりました。交換を考え始める時期です。まずは無料点検で今の状態を確認しませんか。';}
+    else{verdict.textContent='1つ当てはまりました。今すぐの交換は不要かもしれません。気になる場合は無料点検をご利用ください。';}
+  }
+  boxes.forEach(function(b){b.addEventListener('change',judge);});
+
+  // 価格カタログ（プロトタイプ用の例。仕入れ確定後に差し替え）
+  var makers=['パナソニック','シャープ','京セラ','長州産業','三菱電機','オムロン','その他'];
+  var lineup=[
+    {t:'単機能パワコン 4.0kW',kind:'標準',spec:['屋内設置','後継機'],price:308000},
+    {t:'単機能パワコン 5.5kW',kind:'標準',spec:['屋内設置','後継機'],price:352000},
+    {t:'単機能パワコン 5.5kW',kind:'標準',spec:['屋外設置','塩害地域にも'],price:385000},
+    {t:'ハイブリッドパワコン 5.9kW',kind:'蓄電池対応',spec:['あとから蓄電池を追加できる','屋内・屋外'],price:495000},
+    {t:'他社製への交換 5.5kW',kind:'標準',spec:['メーカー撤退・後継機なしの場合','接続確認込み'],price:363000}
+  ];
+  var tabs=document.getElementById('tabs'),cat=document.getElementById('cat');
+  function sub1(p){return Math.min(Math.floor(p/1.1/2),100000);}
+  function fmt(n){return n.toLocaleString('ja-JP');}
+  function renderCat(mk){
+    cat.innerHTML='';
+    lineup.forEach(function(it){
+      var d=document.createElement('div');d.className='item';
+      var after=it.price-sub1(it.price);
+      d.innerHTML='<div class="top"><span class="mk">'+mk+(mk==='その他'?'のメーカー':'')+'から交換</span><span class="lbl'+(it.kind==='標準'?'':' hb')+'">'+it.kind+'</span></div>'+
+        '<h3>'+it.t+'</h3><div class="spec">'+it.spec.map(function(x){return '<span>'+x+'</span>';}).join('')+'</div>'+
+        '<div class="prices"><div class="r1"><span>工事費込み（税込）</span><span><span class="num">'+fmt(it.price)+'</span>円</span></div>'+
+        '<div class="r2"><span>補助金を使うと実質</span><span><span class="num">'+fmt(after)+'</span>円</span></div></div>'+
+        '<a class="btn btn-tel" href="#line">この機種で見積もりを依頼</a>';
+      cat.appendChild(d);
+    });
+    var a=document.createElement('div');a.className='item ask';
+    a.innerHTML='<h3>型番が分からない・どれか迷う</h3><p style="font-size:14px;color:var(--muted)">本体の写真を送っていただければ、合う機種と価格をお調べします。</p><a class="btn btn-line" href="#line">LINEで写真を送る</a>';
+    cat.appendChild(a);
+  }
+  makers.forEach(function(mk,i){
+    var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.id='tab-'+i;
+    b.setAttribute('aria-selected',i===0?'true':'false');b.textContent=mk;
+    b.addEventListener('click',function(){
+      [].forEach.call(tabs.children,function(x){x.setAttribute('aria-selected','false');});
+      b.setAttribute('aria-selected','true');renderCat(mk);
+    });
+    tabs.appendChild(b);
+  });
+  renderCat(makers[0]);
+
+  // 補助金計算（税抜費用の1/2、1台あたり上限10万円）
+  var price=document.getElementById('sim-price'),units=document.getElementById('sim-units');
+  function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円';}
+  function sim(){
+    var p=Math.max(parseFloat(price.value)||0,0),u=parseInt(units.value,10)||1;
+    var perSub=Math.min(Math.floor(p/1.1/2),100000);
+    var total=p*u,sub=perSub*u;
+    document.getElementById('s-total').textContent=yen(total);
+    document.getElementById('s-sub').textContent='−'+yen(sub);
+    document.getElementById('s-net').textContent=yen(total-sub);
+  }
+  price.addEventListener('input',sim);units.addEventListener('change',sim);sim();
+
+  // フォーム（プロトタイプ：送信しない）
+  var form=document.getElementById('form'),thanks=document.getElementById('thanks');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var req=[].slice.call(form.querySelectorAll('[required]')),bad=null;
+    req.forEach(function(el){var ng=!el.value.trim();el.style.borderColor=ng?'var(--alert)':'';if(ng&&!bad)bad=el;});
+    if(bad){bad.focus();thanks.hidden=false;thanks.textContent='お名前・電話番号・郵便番号を入力してください。';return;}
+    thanks.hidden=false;thanks.textContent='送信内容を確認しました（プロトタイプのため、実際には送信されません）。';
+  });
+})();
+</script>
+
+</body>
+</html>
