@@ -237,6 +237,22 @@ dl.dl dt{font-weight:700;color:var(--navy)}
 .form .agree{font-size:13px;color:var(--muted)}
 .form .btn{width:100%}
 .thanks{background:var(--cream);border-radius:10px;padding:14px;font-weight:700}
+/* WordPress（Contact Form 7）で出力されるフォーム部品 */
+.form p{margin:0}
+.form .two>p{display:contents}
+.form>.wpcf7-turnstile{order:2;justify-self:center}
+.form>p:has(input[type=submit]){order:3}
+.form>.wpcf7-response-output{order:4}
+.form br{display:none}
+.wpcf7-form-control-wrap{display:block}
+.chips2 .wpcf7-checkbox{display:flex;flex-wrap:wrap;gap:8px}
+.chips2 .wpcf7-list-item{margin:0}
+.wpcf7-not-valid-tip{display:block;color:var(--red);font-size:13px;font-weight:700;margin-top:4px}
+.wpcf7-not-valid{border-color:var(--red)!important}
+.form .wpcf7-response-output{margin:4px 0 0;padding:14px;border:0!important;border-radius:10px;background:var(--cream);font-weight:700}
+.form.invalid .wpcf7-response-output,.form.failed .wpcf7-response-output{background:#fde8e6;color:var(--red)}
+.form .wpcf7-spinner{display:block;margin:8px auto 0}
+.form input[type=submit].btn{width:100%;-webkit-appearance:none;appearance:none}
 
 footer{background:var(--navy-deep);color:#c9d4dd;font-size:13px;padding-block:28px 120px}
 footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -417,8 +433,6 @@ footer a{color:#fff}
   <symbol id="laurel" viewBox="0 0 24 64"><path d="M18 63 C7 52 4.5 30 12.5 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="13.4" cy="56.0" rx="2.3" ry="5.2" transform="rotate(-48 13.4 56.0)"/><ellipse cx="20.2" cy="54.6" rx="1.9" ry="4.4" transform="rotate(28 20.2 54.6)"/><ellipse cx="8.9" cy="47.5" rx="2.3" ry="5.2" transform="rotate(-48 8.9 47.5)"/><ellipse cx="15.7" cy="46.1" rx="1.9" ry="4.4" transform="rotate(28 15.7 46.1)"/><ellipse cx="5.9" cy="38.5" rx="2.3" ry="5.2" transform="rotate(-48 5.9 38.5)"/><ellipse cx="12.7" cy="37.1" rx="1.9" ry="4.4" transform="rotate(28 12.7 37.1)"/><ellipse cx="4.6" cy="29.5" rx="2.3" ry="5.2" transform="rotate(-48 4.6 29.5)"/><ellipse cx="11.4" cy="28.1" rx="1.9" ry="4.4" transform="rotate(28 11.4 28.1)"/><ellipse cx="5.0" cy="20.5" rx="2.3" ry="5.2" transform="rotate(-48 5.0 20.5)"/><ellipse cx="11.8" cy="19.1" rx="1.9" ry="4.4" transform="rotate(28 11.8 19.1)"/><ellipse cx="6.8" cy="11.5" rx="2.3" ry="5.2" transform="rotate(-48 6.8 11.5)"/><ellipse cx="13.6" cy="10.1" rx="1.9" ry="4.4" transform="rotate(28 13.6 10.1)"/><ellipse cx="13.2" cy="3.4" rx="1.8" ry="4" transform="rotate(14 13.2 3.4)"/></g></symbol>
 </svg>
 
-<!-- 公開前に削除：プロトタイプ表示 -->
-<div class="proto"><div class="in"><b>プロトタイプ</b>　価格・実績はダミー、人物と施工の写真はイメージが含まれます。</div></div>
 <div class="ribbon"><div class="in">令和8年度 東京都のパワコン交換補助金 受付中｜最大10万円／台（予算に達し次第終了）　<a href="#subsidy">詳しく</a></div></div>
 
 <header class="site">
@@ -530,7 +544,7 @@ footer a{color:#fff}
       <div class="photo"><img src="img/photo-error.jpg" alt="パワコンのエラー表示と赤いランプの見本" loading="lazy" width="1200" height="900"><div><b><i>2</i>エラー表示・ランプ</b><span>点滅していれば動画でも</span></div></div>
       <div class="photo"><img src="img/photo-monitor.jpg" alt="0.0kWと表示された室内の発電モニターの見本" loading="lazy" width="1200" height="900"><div><b><i>3</i>室内の発電モニター</b><span>ない場合は売電の明細でも</span></div></div>
     </div>
-    <div class="center-cta"><a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg>LINEで写真を送る（無料）</a></div>
+    <div class="center-cta"><a class="btn btn-line" href="https://line.me/R/ti/p/@095xsxkt?oat_content=url" target="_blank" rel="noopener" data-cta="line"><svg aria-hidden="true"><use href="#i-line"/></svg>LINEで写真を送る（無料）</a></div>
   </div>
 </section>
 
@@ -683,6 +697,7 @@ footer a{color:#fff}
 
 <script>
 (function(){
+  // 補助金の計算
   var price=document.getElementById('sim-price'),units=document.getElementById('sim-units');
   function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円';}
   function sim(){
@@ -692,13 +707,34 @@ footer a{color:#fff}
     document.getElementById('s-sub').textContent='−'+yen(per*u);
     document.getElementById('s-net').textContent=yen(p*u-per*u);
   }
-  price.addEventListener('input',sim);units.addEventListener('change',sim);sim();
+  if(price&&units){price.addEventListener('input',sim);units.addEventListener('change',sim);sim();}
 
-  // フォーム送信：FORM_ENDPOINT（フォーム送信サービスのURL）を設定するとそこへ送信。
-  // 未設定のときは、info@leoforce.co.jp 宛のメールを作成してメールソフトを開く。
-  var FORM_ENDPOINT='';
-  var MAIL_TO='info@leoforce.co.jp';
+  // 計測：dataLayer に lp_cta_click（lp=denkaeru）。個人情報は送らない。
+  var q=new URLSearchParams(location.search);
+  var ref=q.get('ref')||'';
+  function push(o){window.dataLayer=window.dataLayer||[];o.lp='denkaeru';if(ref)o.ref=ref;window.dataLayer.push(o);}
+  function placement(el){var s=el.closest('.sticky,header,.hero,.precheck,section[id],section');if(!s)return 'other';if(s.classList.contains('sticky'))return 'sticky';if(s.tagName==='HEADER')return 'header';if(s.classList.contains('hero'))return 'hero';if(s.classList.contains('precheck'))return 'check';return s.id||'other';}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a');if(!a)return;
+    var h=a.getAttribute('href')||'',ch='';
+    if(h.indexOf('tel:')===0)ch='tel';else if(h.indexOf('line.me')>-1)ch='line';else if(h==='#line')ch='line_guide';else if(h==='#form')ch='form';
+    if(ch)push({event:'lp_cta_click',cta_channel:ch,cta_placement:placement(a)});
+  });
+
+  // 「無料点検を申し込む」→ フォームの点検の選択肢にチェック
+  document.querySelectorAll('[data-check]').forEach(function(a){a.addEventListener('click',function(){
+    document.querySelectorAll('.chips2 input[type=checkbox]').forEach(function(c){if(c.parentNode.textContent.indexOf('無料点検')>-1)c.checked=true;});
+  });});
+
+  // WordPress（Contact Form 7）：流入元を隠し項目へ、送信完了を計測
+  var src=document.querySelector('input[name="lf-source"]');
+  if(src){var parts=[];['ref','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))parts.push(k+'='+q.get(k));});src.value=parts.join(' ')||'direct';}
+  document.addEventListener('wpcf7mailsent',function(){push({event:'lp_form_submit',cta_channel:'form'});});
+
+  // 静的プレビュー用：フォーム送信先が未設定のときはメールソフトを開く
   var form=document.getElementById('form'),thanks=document.getElementById('thanks');
+  if(!form||form.tagName!=='FORM'||form.classList.contains('wpcf7-form'))return;
+  var MAIL_TO='info'+'@'+'leoforce.co.jp';
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var bad=null;
@@ -707,23 +743,11 @@ footer a{color:#fff}
     if(bad){bad.focus();thanks.textContent='お名前・電話番号・郵便番号を入力してください。';return;}
     var v=function(id){return document.getElementById(id).value.trim();};
     var states=[].map.call(form.querySelectorAll('input[name=s]:checked'),function(c){return c.parentNode.textContent.trim();}).join('、')||'未選択';
-    var data={name:v('f-name'),tel:v('f-tel'),zip:v('f-zip'),maker:v('f-maker'),state:states,note:v('f-note')};
-    var body='お名前：'+data.name+'\n電話番号：'+data.tel+'\n郵便番号：'+data.zip+'\nパワコンのメーカー：'+data.maker+'\nいまの状態：'+data.state+'\nご相談内容：\n'+data.note;
-    if(FORM_ENDPOINT){
-      thanks.textContent='送信しています…';
-      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({_subject:'【デンカエル】パワコン交換のご相談',_replyto:MAIL_TO},data))})
-        .then(function(r){if(!r.ok)throw 0;thanks.textContent='送信しました。担当者より折り返しご連絡します。';form.reset();})
-        .catch(function(){thanks.textContent='送信できませんでした。お手数ですが 0120-879-461 までお電話ください。';});
-      return;
-    }
+    var body='お名前：'+v('f-name')+'\n電話番号：'+v('f-tel')+'\n郵便番号：'+v('f-zip')+'\nパワコンのメーカー：'+v('f-maker')+'\nいまの状態：'+states+'\nご相談内容：\n'+v('f-note');
     location.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent('【デンカエル】パワコン交換のご相談')+'&body='+encodeURIComponent(body);
     thanks.textContent='メールソフトで送信画面を開きました。開かない場合は、0120-879-461 までお電話ください。';
   });
 })();
-</script>
-
-<script>
-document.querySelectorAll('[data-check]').forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.dataset.check);if(c)c.checked=true;});});
 </script>
 </body>
 </html>

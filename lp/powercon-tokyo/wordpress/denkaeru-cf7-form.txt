@@ -1,0 +1,8 @@
+<h3>フォームでのご相談（無料）</h3>
+<div class="two"><label>お名前<span class="req">必須</span>[text* your-name autocomplete:name]</label><label>電話番号<span class="req">必須</span>[tel* tel autocomplete:tel]</label></div>
+<div class="two"><label>郵便番号<span class="req">必須</span>[text* zip autocomplete:postal-code placeholder "例 1770041"]</label><label>パワコンのメーカー[select maker "分からない" "シャープ" "パナソニック" "京セラ" "長州産業" "オムロン" "田淵電機" "三菱電機" "東芝" "Qセルズ" "カナディアンソーラー" "その他"]</label></div>
+<fieldset><legend>いまの状態（いくつでも）</legend><div class="chips2">[checkbox state use_label_element "エラー表示" "発電ゼロ" "異音" "10年以上たった" "動いているが無料点検を希望"]</div></fieldset>
+<label>ご相談内容（任意）[textarea note placeholder "例：昨日からモニターにエラーが出て、発電が止まっています"]</label>
+[hidden lf-source]
+<p class="agree">送信すると、<a href="https://leoforce.co.jp/privacy-policy/">個人情報の取り扱い</a>に同意したものとみなします。営業目的のお電話を繰り返すことはありません。</p>
+[submit class:btn class:btn-tel "この内容で相談する（無料）"]
