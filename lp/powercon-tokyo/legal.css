@@ -1,0 +1,32 @@
+/* 特商法表記・プライバシーポリシー共通。LP本体（index.html）と同じ色とフォント */
+:root{
+  color-scheme:light;
+  --navy:#16344d; --navy-2:#22496a; --navy-deep:#0f2638;
+  --sun-deep:#b57a06; --red:#c62f22; --pale:#f3f6f8;
+  --fg:#14202b; --muted:#4d5b68; --line:#d5dde4;
+  --body:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%}
+.in{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--navy-2)}
+header.site{background:var(--pale);border-bottom:1px solid var(--line);padding-block:14px}
+.back{font-weight:700;font-size:14px;text-decoration:none}
+main{padding-block:40px 64px}
+h1{font-size:clamp(24px,4vw,30px);color:var(--navy);line-height:1.4;margin:0 0 24px}
+h2{font-size:18px;color:var(--navy);margin:32px 0 8px;padding-left:10px;border-left:4px solid var(--sun-deep)}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:1.4em}
+dl{display:grid;grid-template-columns:11em 1fr;margin:0;border-top:1px solid var(--line)}
+dt,dd{margin:0;padding:14px 8px;border-bottom:1px solid var(--line)}
+dt{font-weight:700;color:var(--navy);background:var(--pale)}
+.todo{color:var(--red);font-weight:700}
+.addr{background:var(--pale);border-radius:10px;padding:16px}
+.date{color:var(--muted);font-size:14px}
+footer{background:var(--navy-deep);color:#c9d4dd;font-size:13px;padding-block:24px}
+footer a{color:#fff}
+@media (max-width:600px){
+  dl{grid-template-columns:1fr}
+  dt{border-bottom:0;padding-bottom:4px}
+  dd{padding-top:4px}
+}
