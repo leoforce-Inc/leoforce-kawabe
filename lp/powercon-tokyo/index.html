@@ -25,6 +25,10 @@
   --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --r:12px;
+  --gold:linear-gradient(140deg,#fff1b8 0%,#e9b83f 28%,#b8810f 52%,#f6d36b 74%,#a8720b 100%);
+  --gold-text:linear-gradient(180deg,#fff3c4 0%,#f6cf5c 45%,#d99a1c 100%);
+  --sh-1:0 2px 4px rgba(15,38,56,.05),0 10px 24px rgba(15,38,56,.08);
+  --sh-2:0 4px 10px rgba(15,38,56,.08),0 22px 48px rgba(15,38,56,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -87,9 +91,6 @@ nav.gnav a:hover{color:var(--frog-text)}
 .hero h1{font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:.02em;line-height:1.3}
 .hero h1 em{font-style:normal;color:var(--sun)}
 .hero .sub{margin-top:16px;font-size:clamp(16px,1.8vw,19px);opacity:.95}
-.marks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:24px 0;max-width:500px}
-.marks div{aspect-ratio:1;border-radius:50%;background:#fff;color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.25;font-weight:700;font-size:12px}
-.marks b{font-family:var(--display);font-size:17px;color:var(--red)}
 .hero .ctas{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
 .hero .note{font-size:13px;opacity:.85;margin-top:12px}
 .hero-visual{position:relative;min-width:0}
@@ -219,8 +220,6 @@ dl.dl dt{font-weight:700;color:var(--navy)}
 .final .ctas{display:grid;gap:12px}
 .final .telbox{text-align:center;border:1px solid rgba(255,255,255,.25);border-radius:var(--r);padding:12px;text-decoration:none;color:#fff;display:block}
 .final .telbox .num{display:block;font-size:30px;color:var(--sun)}
-.mailbox{font-size:14px;opacity:.9;text-align:center;margin:0}
-.mailbox .addr{font-family:var(--mono);user-select:all}
 .form{margin:40px auto 0;background:#fff;color:var(--fg);border-radius:16px;padding:26px;display:grid;gap:14px;max-width:860px}
 .form h3{color:var(--navy)}
 .form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -247,6 +246,100 @@ footer a{color:#fff}
   padding:8px max(10px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));
   display:none;grid-template-columns:1.2fr .8fr;gap:8px;box-shadow:0 -6px 18px rgba(0,0,0,.08)}
 .sticky .btn{min-height:52px;font-size:16px;padding:6px 10px}
+
+
+/* ===== リッチ化レイヤー ===== */
+/* ヒーローの4つの安心：金縁＋月桂樹のメダル */
+.marks{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0;max-width:540px}
+.marks li{position:relative;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.2;
+  border:3px solid transparent;
+  background:radial-gradient(circle at 50% 28%,#2a5679 0%,#16344d 55%,#0b1e2e 100%) padding-box,var(--gold) border-box;
+  box-shadow:0 0 0 1px rgba(246,211,107,.35),0 10px 22px rgba(0,0,0,.35),inset 0 0 0 4px rgba(11,30,46,.9),inset 0 0 0 5px rgba(246,211,107,.55)}
+.marks .lr{position:absolute;bottom:9%;left:5.5%;width:12%;height:60%;color:#e9bd52;opacity:.95}
+.marks .lr.r{left:auto;right:5.5%;transform:scaleX(-1)}
+.marks .ml{position:relative;font-size:10.5px;font-weight:700;color:#e6edf3;letter-spacing:.02em;max-width:72%}
+.marks b{position:relative;margin-top:3px;font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:0;white-space:nowrap;
+  background:var(--gold-text);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.35))}
+
+/* ヒーロー：光と奥行き */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 520px at 88% -10%,rgba(240,168,28,.22),transparent 62%),
+  radial-gradient(700px 500px at -10% 110%,rgba(44,154,87,.18),transparent 60%),
+  linear-gradient(165deg,#1d4466 0%,#16344d 48%,#0e2335 100%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(90deg,#000,transparent 55%);mask-image:linear-gradient(90deg,#000,transparent 55%)}
+.hero .in{position:relative;padding-block:56px 92px}
+.hero h1{text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.hero .chips span{backdrop-filter:blur(2px)}
+.hero-visual picture img{border-radius:20px;box-shadow:0 0 0 6px rgba(255,255,255,.07),0 30px 60px rgba(0,0,0,.4)}
+.pricecard{border-top:5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--gold) border-box;box-shadow:0 22px 48px rgba(0,0,0,.35)}
+
+/* 信頼バー：ヒーローに重なるカード */
+.trust{background:transparent;border:0;position:relative;z-index:2;margin-top:-52px}
+.trust .in{background:#fff;border-radius:16px;box-shadow:var(--sh-2);padding-inline:8px;max-width:1128px}
+.trust .t{padding:20px 8px}
+.trust .v{font-size:22px}
+.trust .k{color:var(--sun-deep);letter-spacing:.04em}
+
+/* ボタン：グラデーションと立体感 */
+.btn,.hd-btn{transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+.btn-line,.hd-btn{background:linear-gradient(180deg,#14ad55 0%,#05893c 100%)}
+.btn-tel{background:linear-gradient(180deg,#ffd165 0%,#f0a81c 100%)}
+.btn:hover,.hd-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn:active,.hd-btn:active{transform:translateY(2px);box-shadow:none}
+
+/* セクション見出し：飾り罫 */
+.band{position:relative}
+.band:not(.white):not(.final){background-color:var(--pale);background-image:radial-gradient(rgba(22,52,77,.07) 1px,transparent 1.3px);background-size:20px 20px}
+.head h2{position:relative;padding-bottom:18px}
+.head h2::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:64px;height:5px;border-radius:3px;
+  background:linear-gradient(90deg,var(--sun) 0 50%,var(--frog) 50% 100%)}
+.kicker{display:inline-flex;align-items:center;gap:10px}
+.kicker::before,.kicker::after{content:"";width:22px;height:1.5px;background:currentColor;opacity:.6}
+
+/* 症状カード */
+.prob{border:0;border-top:4px solid var(--red);box-shadow:var(--sh-1);padding:22px 20px}
+.prob .num{font-size:30px}
+.precheck{box-shadow:var(--sh-1);background:linear-gradient(135deg,#fff8e4 0%,#fff1cc 100%)}
+
+/* 選ばれる理由：金のナンバーメダル */
+.reason{position:relative;background:#fff;box-shadow:var(--sh-1);border:1px solid #e6ecf1}
+.reason .no{position:absolute;top:12px;left:12px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--gold);color:#3a2700;font-size:16px;box-shadow:0 4px 10px rgba(0,0,0,.25),inset 0 0 0 2px rgba(255,255,255,.45)}
+.reason img{transition:none}
+
+/* 写真3枚・料金プラン・メーカー */
+.photo,.brands li,.steps li,.faq details{box-shadow:var(--sh-1);border-color:#e6ecf1}
+.plan{box-shadow:var(--sh-1);border-color:#e6ecf1}
+.plan.main{position:relative;border:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--gold) border-box;box-shadow:var(--sh-2);transform:translateY(-6px)}
+.plan.main .tag{background:var(--gold);color:#3a2700;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.plan .p .now .num{font-size:38px}
+.sim{box-shadow:var(--sh-1)}
+.sim-out{background:linear-gradient(160deg,#1d4466,#0f2638)}
+
+/* 補助金 */
+.half{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 0%,#fffdf5 0%,#fff1cc 70%);border:2px solid #f3d58a;box-shadow:var(--sh-1)}
+.half .big{background:linear-gradient(180deg,#22496a,#0f2638);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ご依頼の流れ：矢印でつなぐ */
+.steps li{position:relative;border:0}
+.steps li:not(:last-child)::after{content:"";position:absolute;right:-13px;top:50%;width:12px;height:18px;transform:translateY(-50%);
+  background:var(--sun);clip-path:polygon(0 0,100% 50%,0 100%);z-index:1}
+.steps .when{justify-self:start;background:var(--navy);color:#fff;border-radius:999px;padding:1px 12px}
+.steps li.pause .when{background:var(--sun);color:var(--on-sun)}
+
+/* よくある質問 */
+.faq details{background:#fff}
+.faq summary::before{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--frog);color:#fff;font-size:14px}
+
+/* 最後のCTA */
+.final{background:
+  radial-gradient(800px 480px at 100% 0%,rgba(240,168,28,.2),transparent 60%),
+  linear-gradient(165deg,#1d4466 0%,#16344d 50%,#0e2335 100%)}
+.final .top img{box-shadow:0 0 0 6px rgba(255,255,255,.07),0 30px 60px rgba(0,0,0,.4)}
+.final .telbox{background:rgba(255,255,255,.05);border-color:rgba(246,211,107,.45)}
+.form{box-shadow:0 30px 60px rgba(0,0,0,.3);border-top:6px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--gold) border-box}
 
 @media (max-width:1080px){
   nav.gnav{display:none}
@@ -276,8 +369,6 @@ footer a{color:#fff}
   .logo .name{font-size:24px}
   .logo .tag{font-size:9px}
   .hero .ctas{grid-template-columns:1fr}
-  .marks b{font-size:14px}
-  .marks div{font-size:10px}
   .reasons,.probs{grid-template-columns:1fr}
   .precheck{grid-template-columns:1fr;padding:22px 18px}
   .reason{grid-template-columns:120px 1fr;grid-template-rows:auto}
@@ -292,7 +383,21 @@ footer a{color:#fff}
   .form .two{grid-template-columns:1fr}
   .guide svg{width:64px;height:51px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:860px){
+  .hero .in{padding-block:0 76px}
+  .steps li:not(:last-child)::after{display:none}
+  .plan.main{transform:none}
+}
+@media (max-width:600px){
+  .marks{gap:8px;margin:22px 0}
+  .marks li{border-width:2px;box-shadow:0 0 0 1px rgba(246,211,107,.35),0 6px 14px rgba(0,0,0,.35),inset 0 0 0 3px rgba(11,30,46,.9),inset 0 0 0 4px rgba(246,211,107,.55)}
+  .marks .ml{font-size:8.5px;white-space:nowrap;letter-spacing:-.03em;max-width:none}
+  .marks b{font-size:12px;margin-top:1px}
+  .trust{margin-top:-44px}
+  .trust .v{font-size:19px}
+  .reason .no{width:36px;height:36px;font-size:13px;top:8px;left:8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.hd-btn{transition:none}}
 </style>
 </head>
 <body>
@@ -309,10 +414,11 @@ footer a{color:#fff}
   </symbol>
   <symbol id="i-line" viewBox="0 0 24 24"><path fill="#fff" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6c1.4-1.6 2-3.2 2-4.8C22 6.6 17.5 3 12 3Z"/></symbol>
   <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+  <symbol id="laurel" viewBox="0 0 24 64"><path d="M18 63 C7 52 4.5 30 12.5 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><g fill="currentColor"><ellipse cx="13.4" cy="56.0" rx="2.3" ry="5.2" transform="rotate(-48 13.4 56.0)"/><ellipse cx="20.2" cy="54.6" rx="1.9" ry="4.4" transform="rotate(28 20.2 54.6)"/><ellipse cx="8.9" cy="47.5" rx="2.3" ry="5.2" transform="rotate(-48 8.9 47.5)"/><ellipse cx="15.7" cy="46.1" rx="1.9" ry="4.4" transform="rotate(28 15.7 46.1)"/><ellipse cx="5.9" cy="38.5" rx="2.3" ry="5.2" transform="rotate(-48 5.9 38.5)"/><ellipse cx="12.7" cy="37.1" rx="1.9" ry="4.4" transform="rotate(28 12.7 37.1)"/><ellipse cx="4.6" cy="29.5" rx="2.3" ry="5.2" transform="rotate(-48 4.6 29.5)"/><ellipse cx="11.4" cy="28.1" rx="1.9" ry="4.4" transform="rotate(28 11.4 28.1)"/><ellipse cx="5.0" cy="20.5" rx="2.3" ry="5.2" transform="rotate(-48 5.0 20.5)"/><ellipse cx="11.8" cy="19.1" rx="1.9" ry="4.4" transform="rotate(28 11.8 19.1)"/><ellipse cx="6.8" cy="11.5" rx="2.3" ry="5.2" transform="rotate(-48 6.8 11.5)"/><ellipse cx="13.6" cy="10.1" rx="1.9" ry="4.4" transform="rotate(28 13.6 10.1)"/><ellipse cx="13.2" cy="3.4" rx="1.8" ry="4" transform="rotate(14 13.2 3.4)"/></g></symbol>
 </svg>
 
 <!-- 公開前に削除：プロトタイプ表示 -->
-<div class="proto"><div class="in"><b>プロトタイプ</b>　価格・実績はダミー、人物と施工の写真はイメージです。</div></div>
+<div class="proto"><div class="in"><b>プロトタイプ</b>　価格・実績はダミー、人物と施工の写真はイメージが含まれます。</div></div>
 <div class="ribbon"><div class="in">令和8年度 東京都のパワコン交換補助金 受付中｜最大10万円／台（予算に達し次第終了）　<a href="#subsidy">詳しく</a></div></div>
 
 <header class="site">
@@ -338,12 +444,12 @@ footer a{color:#fff}
       <div class="chips"><span>東京都内の戸建て住宅 専門</span><span class="w">全メーカー対応</span><span class="w">止まる前の無料点検も</span></div>
       <h1>止まったパワコン、<br><em>最短翌日</em>に<br>カエます。</h1>
       <p class="sub">写真3枚を送るだけ。補助金を引いた「総額」を、その日のうちにお知らせします。</p>
-      <div class="marks">
-        <div>工事費・処分費<b>込み総額</b></div>
-        <div>工事保証<b>10年無料</b></div>
-        <div>補助金申請<b>代行0円</b></div>
-        <div>その場で<b>契約なし</b></div>
-      </div>
+      <ul class="marks" aria-label="デンカエルの4つの安心">
+        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">工事費・処分費</span><b>込み総額</b></li>
+        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">工事保証</span><b>10年無料</b></li>
+        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">補助金申請</span><b>代行0円</b></li>
+        <li><svg class="lr" aria-hidden="true"><use href="#laurel"/></svg><svg class="lr r" aria-hidden="true"><use href="#laurel"/></svg><span class="ml">その場で</span><b>契約なし</b></li>
+      </ul>
       <div class="ctas">
         <a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg><span>写真を撮って<br>かんたん見積もり</span></a>
         <a class="btn btn-tel" href="tel:0120879461"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>電話で相談<small class="num">0120-879-461</small></span></a>
@@ -531,7 +637,6 @@ footer a{color:#fff}
         <div class="ctas">
           <a class="btn btn-line" href="#line"><svg aria-hidden="true"><use href="#i-line"/></svg>写真を撮ってかんたん見積もり</a>
           <a class="telbox" href="tel:0120879461">お電話でのご相談<span class="num">0120-879-461</span><small>受付 9:00〜20:00（年中無休）</small></a>
-          <p class="mailbox">メールでのご相談：<span class="addr">info@leoforce.co.jp</span></p>
         </div>
       </div>
     </div>
@@ -566,7 +671,7 @@ footer a{color:#fff}
 
 <footer>
   <div class="in">
-    <span>運営：株式会社レオフォース｜〒151-0051 東京都渋谷区千駄ケ谷5-27-5 リンクスクエア新宿 16F<br>お問い合わせ：0120-879-461／info@leoforce.co.jp｜<a href="tokushoho.html">特定商取引法に基づく表記</a>｜<a href="privacy.html">プライバシーポリシー</a><br>※掲載している人物・施工の写真はイメージです。</span>
+    <span>運営：株式会社レオフォース｜〒151-0051 東京都渋谷区千駄ケ谷5-27-5 リンクスクエア新宿 16F<br>お問い合わせ：0120-879-461｜<a href="tokushoho.html">特定商取引法に基づく表記</a>｜<a href="privacy.html">プライバシーポリシー</a><br>※掲載している人物・施工の写真はイメージが含まれます。</span>
     <span>© デンカエル</span>
   </div>
 </footer>
@@ -612,7 +717,7 @@ footer a{color:#fff}
       return;
     }
     location.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent('【デンカエル】パワコン交換のご相談')+'&body='+encodeURIComponent(body);
-    thanks.textContent='メールソフトで送信画面を開きました。開かない場合は、info@leoforce.co.jp へ直接メールするか、0120-879-461 までお電話ください。';
+    thanks.textContent='メールソフトで送信画面を開きました。開かない場合は、0120-879-461 までお電話ください。';
   });
 })();
 </script>
