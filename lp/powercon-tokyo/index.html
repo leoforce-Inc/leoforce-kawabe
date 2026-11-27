@@ -252,7 +252,9 @@ dl.dl dt{font-weight:700;color:var(--navy)}
 .form .wpcf7-response-output{margin:4px 0 0;padding:14px;border:0!important;border-radius:10px;background:var(--cream);font-weight:700}
 .form.invalid .wpcf7-response-output,.form.failed .wpcf7-response-output{background:#fde8e6;color:var(--red)}
 .form .wpcf7-spinner{display:block;margin:8px auto 0}
-.form input[type=submit].btn{width:100%;-webkit-appearance:none;appearance:none}
+.form input[type=submit].btn{width:100%;-webkit-appearance:none;appearance:none;border:0;min-height:62px;font-family:var(--display);font-weight:900;font-size:19px;cursor:pointer}
+.form input[type=submit].btn-tel{background:linear-gradient(180deg,#ffd165 0%,#f0a81c 100%);color:var(--on-sun);box-shadow:0 4px 0 var(--sun-deep)}
+.form input[type=submit].btn-tel:disabled{opacity:.7;cursor:wait}
 
 footer{background:var(--navy-deep);color:#c9d4dd;font-size:13px;padding-block:28px 120px}
 footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
